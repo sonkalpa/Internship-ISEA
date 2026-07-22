@@ -38,9 +38,9 @@ The goal of this repository is to maintain a clear and organized record of:
 
 ## Repository Structure
 
-- `assignment2/` - completed assignment deliverables
-- `assignment1/` - planned (to be added)
-- `assignment3/` - planned (to be added)
+- `assignment1/` - reliable UDP implementation and docs
+- `assignment2/` - completed TCP performance deliverables
+- `assignment3/` - raw socket packet analysis implementation and docs
 - `prd.md` - assignment requirements and acceptance criteria
 - `plan.md` - execution milestones and progress tracking
 
@@ -48,9 +48,9 @@ The goal of this repository is to maintain a clear and organized record of:
 
 | Milestone | Status | Notes |
 |---|---|---|
-| Assignment 1 | In Progress | Planning and structure setup phase |
+| Assignment 1 | In Progress | Foundation complete; validation/evidence pending |
 | Assignment 2 | Completed | Implementation, analysis, and docs available |
-| Assignment 3 | Pending | Starts after Assignment 1 completion |
+| Assignment 3 | In Progress | Foundation complete; traffic capture and report pending |
 
 ## Working Style
 

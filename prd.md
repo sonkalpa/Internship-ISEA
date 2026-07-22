@@ -92,11 +92,13 @@ Assignments in scope:
 
 | Milestone | Status | Notes |
 |---|---|---|
-| M1 - Assignment 1 setup and implementation | In Progress | Planning active; folder not yet added to repo |
+| M1 - Assignment 1 setup and implementation | Completed | `assignment1/` created with UDP client/server and README |
 | M2 - Assignment 2 implementation and analysis | Completed | Existing deliverables in `assignment2/` |
-| M3 - Assignment 3 setup and implementation | Not Started | Folder not yet added to repo |
-| M4 - Final internship packaging and review | Not Started | Depends on M1 and M3 |
+| M3 - Assignment 3 setup and implementation | Completed | `assignment3/` created with raw socket code and README |
+| M4 - Assignment 1 and 3 validation evidence | In Progress | Experiments, captures, screenshots, and report artifacts pending |
+| M5 - Final internship packaging and review | Not Started | Depends on M4 completion |
 
 ## 11) Change Log
 
 - 2026-07-22: Initial PRD created for assignments 1-3 planning and milestone tracking.
+- 2026-07-22: Updated PRD after adding `assignment1/` and `assignment3/` foundations.
