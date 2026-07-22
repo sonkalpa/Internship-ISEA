@@ -25,6 +25,7 @@ assignment1/
   client.py
   server.py
   HOW_TO_RUN.md
+  run_wsl_assignment1.sh
   report_template.md
   result_table.csv            (generated)
   logs/                       (generated local run logs)
@@ -83,6 +84,12 @@ If `tc/netem` is unavailable (for example on WSL2), use the fallback mode in
 
 - server flag: `--reply-delay-ms 30`
 - client flag: `--emulate-loss`
+
+Fastest WSL command:
+
+```bash
+bash run_wsl_assignment1.sh
+```
 
 ## Required Console Output
 

@@ -1,57 +1,33 @@
 # Assignment 1 - HOW TO RUN
 
-This file provides two execution modes:
+This guide includes a WSL-friendly flow that works from Ubuntu terminal on
+Windows, even when `tc/netem` is unavailable.
 
-- Mode A: native Mininet `tc/netem` (preferred where available)
-- Mode B: WSL-safe fallback using application-level loss emulation
+## Quickest Working Method on WSL
 
-Use Mode B when `sch_netem` is unavailable and `--link tc,...` fails.
-
-## Mode A (Preferred): Mininet `tc/netem`
-
-Run each profile in a fresh Mininet session:
+Run this one command from `assignment1/`:
 
 ```bash
-sudo mn --link tc,bw=5,delay=30ms,loss=0
+bash run_wsl_assignment1.sh
 ```
 
-```bash
-sudo mn --link tc,bw=5,delay=30ms,loss=5
-```
+It will:
 
-```bash
-sudo mn --link tc,bw=5,delay=30ms,loss=10
-```
+- run loss profiles `0`, `5`, `10` sequentially
+- generate `result_table.csv`
+- generate logs under `logs/`
 
-Inside Mininet:
+## Manual WSL Method (No `xterm`, no `tc/netem`)
 
-```bash
-nodes
-net
-pingall
-```
+Use this if you want full control and visible output in one terminal.
 
-Run server/client:
-
-```bash
-h1 python3 server.py --host 10.0.0.1 --port 5000 --expected 10
-```
-
-```bash
-h2 python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent <LOSS> --timeout 1.5
-```
-
-Replace `<LOSS>` with `0`, `5`, and `10` in each profile run.
-
-## Mode B (WSL Fallback): No `tc/netem` required
-
-### Step 1: Start default Mininet
+### 1) Start Mininet
 
 ```bash
 sudo mn
 ```
 
-### Step 2: Verify topology
+### 2) Verify topology
 
 ```bash
 nodes
@@ -59,45 +35,49 @@ net
 pingall
 ```
 
-### Step 3: Open host terminals
+### 3) Start server on `h1` in background
 
 ```bash
-xterm h1 h2
+h1 bash -lc "cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1 && python3 server.py --host 10.0.0.1 --port 5000 --expected 10 --reply-delay-ms 30 > logs/server_loss0.out.txt 2>&1 &"
 ```
 
-### Step 4: In `h1` terminal, run server with artificial 30ms ACK delay
+### 4) Run client on `h2` for loss 0
 
 ```bash
-cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1
-python3 server.py --host 10.0.0.1 --port 5000 --expected 10 --reply-delay-ms 30
+h2 bash -lc "cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1 && python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 0 --timeout 1.5 --emulate-loss --seed 2408 > logs/client_loss0.txt 2>&1"
 ```
 
-### Step 5: In `h2` terminal, run client profile for LOSS=0
+### 5) Restart server and run loss 5
 
 ```bash
-cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1
-python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 0 --timeout 1.5 --emulate-loss --seed 2408
+h1 pkill -f "python3 server.py" || true
+h1 bash -lc "cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1 && python3 server.py --host 10.0.0.1 --port 5000 --expected 10 --reply-delay-ms 30 > logs/server_loss5.out.txt 2>&1 &"
+h2 bash -lc "cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1 && python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 5 --timeout 1.5 --emulate-loss --seed 2408 > logs/client_loss5.txt 2>&1"
 ```
 
-### Step 6: Run LOSS=5 profile (same Mininet session is fine)
+### 6) Restart server and run loss 10
 
 ```bash
-python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 5 --timeout 1.5 --emulate-loss --seed 2408
+h1 pkill -f "python3 server.py" || true
+h1 bash -lc "cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1 && python3 server.py --host 10.0.0.1 --port 5000 --expected 10 --reply-delay-ms 30 > logs/server_loss10.out.txt 2>&1 &"
+h2 bash -lc "cd /mnt/e/ASSIGNMENT/Internship-ISEA/assignment1 && python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 10 --timeout 1.5 --emulate-loss --seed 2408 > logs/client_loss10.txt 2>&1"
 ```
 
-### Step 7: Run LOSS=10 profile
-
-```bash
-python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 10 --timeout 1.5 --emulate-loss --seed 2408
-```
-
-### Step 8: Stop Mininet
-
-In Mininet CLI:
+### 7) Exit Mininet
 
 ```bash
 exit
 ```
+
+## Native Mininet `tc/netem` Method (If available)
+
+Use this only if your system supports `sch_netem`:
+
+```bash
+sudo mn --link tc,bw=5,delay=30ms,loss=0
+```
+
+Repeat for loss `5` and `10`.
 
 ## Required screenshots
 
@@ -111,7 +91,7 @@ Save these under `screenshots/`:
 
 ## CSV validation
 
-`result_table.csv` must keep this exact header:
+`result_table.csv` header must be exactly:
 
 `roll_no,name,loss_percent,timeout,total_messages,total_packets_sent,total_retransmissions,transfer_time_seconds,status`
 
