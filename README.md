@@ -38,7 +38,19 @@ The goal of this repository is to maintain a clear and organized record of:
 
 ## Repository Structure
 
-- `assignment2/` - internship task folder
+- `assignment2/` - completed assignment deliverables
+- `assignment1/` - planned (to be added)
+- `assignment3/` - planned (to be added)
+- `prd.md` - assignment requirements and acceptance criteria
+- `plan.md` - execution milestones and progress tracking
+
+## Milestone Tracker
+
+| Milestone | Status | Notes |
+|---|---|---|
+| Assignment 1 | In Progress | Planning and structure setup phase |
+| Assignment 2 | Completed | Implementation, analysis, and docs available |
+| Assignment 3 | Pending | Starts after Assignment 1 completion |
 
 ## Working Style
 
@@ -54,6 +66,7 @@ For each internship task, I follow this process:
 - Root `README.md` gives internship-level context.
 - Each assignment folder has its own README with task-specific steps and details.
 - Documentation is updated whenever repository content is changed.
+- `prd.md` and `plan.md` are updated on each milestone change.
 
 ## Maintainer
 
