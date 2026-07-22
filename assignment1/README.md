@@ -25,6 +25,7 @@ assignment1/
   client.py
   server.py
   result_table.csv            (generated)
+  logs/                       (generated local run logs)
   screenshots/                (add required PNGs)
   report.pdf                  (to be added)
 ```
@@ -112,4 +113,6 @@ It must have 3 data rows for loss `0`, `5`, `10`.
 ## Status
 
 - Code foundation: completed
-- Experiment evidence collection: pending
+- Local functional validation (loss 0/5/10 rows): completed
+- Local validation logs are stored under `logs/` (loopback run)
+- Mininet packet-loss validation + screenshots/report: pending

@@ -10,7 +10,7 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 | Milestone | Status | Target Output |
 |---|---|---|
 | M1 - Assignment 1 foundation | Completed | `assignment1/` folder with code and README added |
-| M2 - Assignment 1 validation and evidence | In Progress | logs/captures/results + updated docs |
+| M2 - Assignment 1 validation and evidence | In Progress | local result table/logs ready; Mininet captures pending |
 | M3 - Assignment 3 foundation | Completed | `assignment3/` folder with `raw_capture.c` and README added |
 | M4 - Assignment 3 validation and evidence | Pending | parsed packet outputs + analysis artifacts |
 | M5 - Final consolidation | Pending | root docs finalized and submission-ready repo |
@@ -61,3 +61,5 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 
 - 2026-07-22: Plan initialized; Assignment 2 considered complete; Assignment 1 and 3 queued.
 - 2026-07-22: Completed foundation setup for `assignment1/` and `assignment3/`; started Assignment 1 validation phase.
+- 2026-07-22: Ran local validation for Assignment 1 and generated baseline `result_table.csv` + logs.
+- 2026-07-22: Added Assignment 3 Linux execution checklist and packet comparison template.
