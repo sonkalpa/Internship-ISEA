@@ -1,8 +1,33 @@
 # Internship-ISEA
 
-This repository contains my internship work, including technical tasks, implementation files, analysis outputs, and supporting documentation.
+## ISEA Internship
+
+### Summer Internship on Cyber Security and Secure App Development
+
+This repository is maintained for the Summer Internship on Cyber Security and
+Secure App Development under Tezpur University's CSE Department. The internship
+is research-oriented and focused on building secure and resilient digital
+infrastructure in a virtual lab environment.
+
+## Internship Details
+
+| Field | Value |
+|---|---|
+| Start Date | 01 Jun 2026 |
+| End Date | 09 Aug 2026 |
+| Mode | Online Self-paced |
+| Domain | Cyber Security and Secure App Development |
 
 ## Internship Overview
+
+The internship work focuses on:
+
+- secure application framework development
+- IoT security use cases
+- software defined networking (SDN)
+- protection of distributed wireless networks
+
+## Repository Purpose
 
 The goal of this repository is to maintain a clear and organized record of:
 
