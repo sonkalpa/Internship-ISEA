@@ -1,33 +1,35 @@
 # Internship-ISEA
 
-Repository for internship assignments and supporting artifacts.
+This repository contains my internship work, including technical tasks, implementation files, analysis outputs, and supporting documentation.
 
-## Contents
+## Internship Overview
 
-- `assignment2/` - TCP connection performance analysis (persistent vs new connection)
+The goal of this repository is to maintain a clear and organized record of:
 
-## Assignment 2 at a Glance
+- work completed during the internship
+- assignment deliverables and reports
+- experiment results and generated artifacts
+- progress updates over time
 
-`assignment2/` contains:
+## Repository Structure
 
-- Python TCP client and server
-- Generated CSV logs and summary tables
-- Graphs for required analysis
-- Packet-capture screenshots
-- Assignment report draft (`report.docx`)
+- `assignment2/` - internship task folder
 
-See `assignment2/README.md` for complete details and commands.
+## Working Style
 
-## Run Assignment 2
+For each internship task, I follow this process:
 
-From the `assignment2/` directory:
+1. implement required code/workflow
+2. run and validate outputs
+3. generate analysis artifacts (tables/graphs/logs/screenshots)
+4. document results and submission files
 
-```bash
-python3 server.py --host 127.0.0.1 --port 5000
-python3 client.py --server-ip 127.0.0.1
-python3 generate_graphs.py
-```
+## Documentation Rules
 
-## Update Policy
+- Root `README.md` gives internship-level context.
+- Each assignment folder has its own README with task-specific steps and details.
+- Documentation is updated whenever repository content is changed.
 
-This repository README and each assignment README are updated whenever assignment files are changed so the documentation stays in sync with the latest commit.
+## Maintainer
+
+- Sonkalpa Borah
