@@ -1,0 +1,2 @@
+# Paste the terminal output from:
+# sudo ./raw_capture 20

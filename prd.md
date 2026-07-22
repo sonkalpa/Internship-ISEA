@@ -95,7 +95,7 @@ Assignments in scope:
 | M1 - Assignment 1 setup and implementation | Completed | `assignment1/` created with UDP client/server and README |
 | M2 - Assignment 2 implementation and analysis | Completed | Existing deliverables in `assignment2/` |
 | M3 - Assignment 3 setup and implementation | Completed | `assignment3/` created with raw socket code and README |
-| M4 - Assignment 1 and 3 validation evidence | In Progress | A1 local logs/result table ready; Mininet/Wireshark evidence pending |
+| M4 - Assignment 1 and 3 validation evidence | In Progress | A1/A3 structure standardized with run guides and templates; Mininet/Wireshark evidence pending |
 | M5 - Final internship packaging and review | Not Started | Depends on M4 completion |
 
 ## 11) Change Log
@@ -104,3 +104,4 @@ Assignments in scope:
 - 2026-07-22: Updated PRD after adding `assignment1/` and `assignment3/` foundations.
 - 2026-07-22: Updated PRD after Assignment 1 local validation output generation.
 - 2026-07-22: Added Assignment 3 run-support artifacts for packet comparison workflow.
+- 2026-07-22: Standardized Assignment 1 and 3 deliverable structure to match Assignment 2 organization style.

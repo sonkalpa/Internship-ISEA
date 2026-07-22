@@ -48,9 +48,9 @@ The goal of this repository is to maintain a clear and organized record of:
 
 | Milestone | Status | Notes |
 |---|---|---|
-| Assignment 1 | In Progress | Local validation complete; Mininet evidence pending |
+| Assignment 1 | In Progress | Organized deliverables ready; Mininet evidence pending |
 | Assignment 2 | Completed | Implementation, analysis, and docs available |
-| Assignment 3 | In Progress | Foundation complete; traffic capture and report pending |
+| Assignment 3 | In Progress | Organized deliverables ready; Linux capture/report pending |
 
 ## Working Style
 

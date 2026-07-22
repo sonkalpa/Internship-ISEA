@@ -21,10 +21,12 @@ generate traffic, compare with Wireshark, and document analysis.
 assignment3/
   raw_capture.c
   README.md
-  RUN_STEPS.md
+  HOW_TO_RUN.md
+  report_template.md
   packet_comparison_template.csv
   screenshots/                (add required PNGs)
-  program_output.txt          (to be generated)
+  program_output.txt          (replace template with actual output)
+  system_details.txt          (replace template with Linux command output)
   capture.pcapng              (to be generated)
   report.pdf                  (to be added)
 ```
@@ -91,4 +93,4 @@ ssh 127.0.0.1
 - run live experiment and save `program_output.txt`
 - collect Wireshark packet comparison table for 5 packets
 - complete report sections (header analysis, reflection answers)
-- follow detailed Linux checklist in `RUN_STEPS.md`
+- follow detailed Linux checklist in `HOW_TO_RUN.md`

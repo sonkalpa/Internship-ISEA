@@ -1,0 +1,4 @@
+# Paste command outputs in Linux:
+# uname -a
+# gcc --version
+# ip addr

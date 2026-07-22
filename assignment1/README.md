@@ -24,6 +24,8 @@ Build a UDP client-server program in Mininet with:
 assignment1/
   client.py
   server.py
+  HOW_TO_RUN.md
+  report_template.md
   result_table.csv            (generated)
   logs/                       (generated local run logs)
   screenshots/                (add required PNGs)
@@ -116,3 +118,7 @@ It must have 3 data rows for loss `0`, `5`, `10`.
 - Local functional validation (loss 0/5/10 rows): completed
 - Local validation logs are stored under `logs/` (loopback run)
 - Mininet packet-loss validation + screenshots/report: pending
+
+## Detailed Run Guide
+
+Use `HOW_TO_RUN.md` for step-by-step execution and submission checklist.
