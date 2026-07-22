@@ -1,14 +1,43 @@
 # Assignment 3 - HOW TO RUN
 
-Run this assignment on Linux (or Mininet host namespace) with root access.
+This guide includes a WSL-friendly command flow.
 
-## 1) Compile
+## Quickest Working Method (WSL/Linux)
+
+From `assignment3/` run:
+
+```bash
+bash run_wsl_assignment3.sh
+```
+
+Optional arguments:
+
+```bash
+bash run_wsl_assignment3.sh <packet_count> <traffic_connections>
+```
+
+Example:
+
+```bash
+bash run_wsl_assignment3.sh 25 60
+```
+
+This command will generate:
+
+- `program_output.txt`
+- `system_details.txt`
+- `traffic_generation_output.txt`
+- `capture.pcapng` (if `tshark` is available)
+
+## Manual Method (step-by-step)
+
+### 1) Compile
 
 ```bash
 gcc raw_capture.c -o raw_capture
 ```
 
-## 2) Capture system details (for report)
+### 2) Capture system details
 
 ```bash
 uname -a > system_details.txt
@@ -16,58 +45,43 @@ gcc --version >> system_details.txt
 ip addr >> system_details.txt
 ```
 
-## 3) Start raw capture
+### 3) Start traffic generator in one terminal
+
+```bash
+python3 generate_tcp_traffic.py --count 40 --port 5000 --delay 0.03
+```
+
+### 4) Start raw capture in another terminal
 
 ```bash
 sudo ./raw_capture 20 | tee program_output.txt
 ```
 
-Keep this running while generating traffic in another terminal.
+### 5) Wireshark/tshark capture
 
-## 4) Generate TCP traffic (roll last digit 8 => protocol TCP)
+- GUI Wireshark filter: `tcp` or `ip.proto == 6`
+- Save file as `capture.pcapng`
 
-Use one or more commands:
-
-```bash
-nc -v 127.0.0.1 5000
-```
+If you prefer terminal capture:
 
 ```bash
-curl http://example.com
+sudo tshark -i any -f "tcp" -a duration:20 -w capture.pcapng
 ```
 
-```bash
-ssh 127.0.0.1
-```
+### 6) Fill comparison template
 
-Take screenshot: `screenshots/traffic_generation.png`.
+Fill 5 rows in `packet_comparison_template.csv` from Wireshark + program output.
 
-## 5) Wireshark capture and verification
+### 7) Take required screenshots
 
-1. Open Wireshark on interface carrying this traffic.
-2. Filter with `tcp` or `ip.proto == 6`.
-3. Save capture as `capture.pcapng` in this folder.
-4. Pick any 5 packets and fill `packet_comparison_template.csv`.
-
-Take screenshots:
-
+- `screenshots/traffic_generation.png`
 - `screenshots/program_output.png`
 - `screenshots/wireshark_packets.png`
 - `screenshots/comparison_packets.png`
 
-## 6) Final report
+### 8) Final report
 
-Use `report_template.md` outline and prepare final report as PDF:
+Use `report_template.md` and export:
 
-- `report.pdf` (submission)
-- optional editable source: `report.docx`
-
-## 7) Folder checklist before submission
-
-- `raw_capture.c`
-- `program_output.txt`
-- `capture.pcapng`
-- `packet_comparison_template.csv` (filled)
-- `system_details.txt`
-- `screenshots/` (required PNG files)
 - `report.pdf`
+- optional: `report.docx`

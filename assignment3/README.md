@@ -20,13 +20,16 @@ generate traffic, compare with Wireshark, and document analysis.
 ```text
 assignment3/
   raw_capture.c
+  generate_tcp_traffic.py
   README.md
   HOW_TO_RUN.md
+  run_wsl_assignment3.sh
   report_template.md
   packet_comparison_template.csv
   screenshots/                (add required PNGs)
   program_output.txt          (replace template with actual output)
   system_details.txt          (replace template with Linux command output)
+  traffic_generation_output.txt (generated)
   capture.pcapng              (to be generated)
   report.pdf                  (to be added)
 ```
@@ -59,7 +62,13 @@ sudo ./raw_capture 30
 
 ## Example Traffic Generation (TCP)
 
-Use any one or more while the raw socket program is running:
+Preferred local generator (deterministic):
+
+```bash
+python3 generate_tcp_traffic.py --count 40 --port 5000 --delay 0.03
+```
+
+Alternative commands while raw socket program is running:
 
 ```bash
 nc -v 127.0.0.1 5000
@@ -94,3 +103,9 @@ ssh 127.0.0.1
 - collect Wireshark packet comparison table for 5 packets
 - complete report sections (header analysis, reflection answers)
 - follow detailed Linux checklist in `HOW_TO_RUN.md`
+
+## Fast WSL Command
+
+```bash
+bash run_wsl_assignment3.sh
+```

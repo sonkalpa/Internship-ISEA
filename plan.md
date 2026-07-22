@@ -12,7 +12,7 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 | M1 - Assignment 1 foundation | Completed | `assignment1/` folder with code and README added |
 | M2 - Assignment 1 validation and evidence | In Progress | WSL automation script added; final screenshots/report pending |
 | M3 - Assignment 3 foundation | Completed | `assignment3/` folder with `raw_capture.c` and README added |
-| M4 - Assignment 3 validation and evidence | In Progress | `HOW_TO_RUN.md` + evidence templates added; Linux packet capture pending |
+| M4 - Assignment 3 validation and evidence | In Progress | WSL automation script + traffic generator added; packet comparison/report pending |
 | M5 - Final consolidation | Pending | root docs finalized and submission-ready repo |
 
 ## Work Breakdown
@@ -66,3 +66,4 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 - 2026-07-22: Standardized Assignment 1 and 3 structure with HOW_TO_RUN guides, report templates, and screenshot checklists.
 - 2026-07-22: Added WSL-compatible Assignment 1 execution path using emulated loss and reply delay flags.
 - 2026-07-22: Added `run_wsl_assignment1.sh` for one-command WSL execution without `tc/netem`.
+- 2026-07-22: Added `run_wsl_assignment3.sh` and `generate_tcp_traffic.py` for one-command Assignment 3 execution.
