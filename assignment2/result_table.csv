@@ -1,0 +1,7 @@
+roll_no,name,mode,bandwidth_mbps,delay_ms,message_size_bytes,total_messages,average_response_time_seconds,throughput_bytes_per_second,status
+CS-BTC24-08,Sonkalpa Borah,persistent,5,50,128,10,0.000102,1160514.34,success
+CS-BTC24-08,Sonkalpa Borah,persistent,5,50,512,10,8.1e-05,5625063.66,success
+CS-BTC24-08,Sonkalpa Borah,persistent,5,50,1024,10,8.4e-05,11035622.79,success
+CS-BTC24-08,Sonkalpa Borah,new_connection,5,50,128,10,0.000293,457815.57,success
+CS-BTC24-08,Sonkalpa Borah,new_connection,5,50,512,10,0.000349,1471525.37,success
+CS-BTC24-08,Sonkalpa Borah,new_connection,5,50,1024,10,0.000299,3417465.93,success
