@@ -11,6 +11,7 @@ Produces/updates result_table.csv with one row per loss condition.
 import argparse
 import csv
 import os
+import random
 import socket
 import time
 
@@ -101,10 +102,27 @@ def main():
     parser.add_argument("--timeout", type=float, default=derive_timeout_from_roll(ROLL_NO))
     parser.add_argument("--messages", type=int, default=TOTAL_MESSAGES)
     parser.add_argument("--csv", default="result_table.csv")
+    parser.add_argument(
+        "--emulate-loss",
+        action="store_true",
+        help="Emulate packet loss in client logic (useful where tc/netem is unavailable)",
+    )
+    parser.add_argument(
+        "--seed",
+        type=int,
+        default=2408,
+        help="Seed for deterministic emulated loss runs",
+    )
     args = parser.parse_args()
 
     total_packets_sent = 0
     total_retransmissions = 0
+    rng = random.Random(args.seed + args.loss_percent)
+
+    def is_lost() -> bool:
+        if not args.emulate_loss:
+            return False
+        return rng.random() < (args.loss_percent / 100.0)
 
     with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
         sock.settimeout(args.timeout)
@@ -114,12 +132,22 @@ def main():
             payload = f"{seq}|Message {seq} from h2".encode()
 
             while True:
-                sock.sendto(payload, (args.server_ip, args.port))
                 total_packets_sent += 1
+
+                if is_lost():
+                    total_retransmissions += 1
+                    time.sleep(args.timeout)
+                    continue
+
+                sock.sendto(payload, (args.server_ip, args.port))
 
                 try:
                     data, _ = sock.recvfrom(4096)
                 except socket.timeout:
+                    total_retransmissions += 1
+                    continue
+
+                if is_lost():
                     total_retransmissions += 1
                     continue
 

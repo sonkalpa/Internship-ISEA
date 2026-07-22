@@ -13,6 +13,7 @@ Tracks unique messages and duplicates.
 
 import argparse
 import socket
+import time
 
 HOST = "0.0.0.0"
 PORT = 5000
@@ -32,6 +33,12 @@ def main():
     parser.add_argument("--host", default=HOST)
     parser.add_argument("--port", type=int, default=PORT)
     parser.add_argument("--expected", type=int, default=10, help="Expected unique messages")
+    parser.add_argument(
+        "--reply-delay-ms",
+        type=float,
+        default=0.0,
+        help="Artificial delay before sending ACK (useful when tc delay is unavailable)",
+    )
     args = parser.parse_args()
 
     seen = set()
@@ -52,6 +59,9 @@ def main():
                 duplicates += 1
             else:
                 seen.add(seq)
+
+            if args.reply_delay_ms > 0:
+                time.sleep(args.reply_delay_ms / 1000.0)
 
             ack = f"ACK|{seq}".encode()
             sock.sendto(ack, addr)

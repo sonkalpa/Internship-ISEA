@@ -78,6 +78,12 @@ h2 python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent 0 --timeout
 3. Repeat step 2 for `--loss-percent 5` and `--loss-percent 10` in their
    corresponding Mininet runs.
 
+If `tc/netem` is unavailable (for example on WSL2), use the fallback mode in
+`HOW_TO_RUN.md` with:
+
+- server flag: `--reply-delay-ms 30`
+- client flag: `--emulate-loss`
+
 ## Required Console Output
 
 Client prints:
