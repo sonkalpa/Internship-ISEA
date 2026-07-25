@@ -130,8 +130,8 @@ It must have 3 data rows for loss `0`, `5`, `10`.
 ## Status
 
 - Code foundation: completed
-- Local functional validation (loss 0/5/10 rows): completed
-- Local validation logs are stored under `logs/` (loopback run)
+- WSL runner execution (loss 0/5/10 rows): completed
+- Updated logs are stored under `logs/`
 - Mininet packet-loss validation + screenshots/report: pending
 
 ## Detailed Run Guide
