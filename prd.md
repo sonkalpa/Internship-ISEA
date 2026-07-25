@@ -95,7 +95,7 @@ Assignments in scope:
 | M1 - Assignment 1 setup and implementation | Completed | `assignment1/` created with UDP client/server and README |
 | M2 - Assignment 2 implementation and analysis | Completed | Existing deliverables in `assignment2/` |
 | M3 - Assignment 3 setup and implementation | Completed | `assignment3/` created with raw socket code and README |
-| M4 - Assignment 1 and 3 validation evidence | In Progress | A1 runners support OVS/LinuxBridge/loopback fallback on WSL; A3 uses one-command WSL runner; final evidence/report pending |
+| M4 - Assignment 1 and 3 validation evidence | In Progress | A1 runner defaults to loopback on WSL; A3 uses one-command WSL runner; final evidence/report pending |
 | M5 - Final internship packaging and review | Not Started | Depends on M4 completion |
 
 ## 11) Change Log
@@ -111,3 +111,4 @@ Assignments in scope:
 - 2026-07-22: Improved Assignment 1 WSL automation with Python Mininet runner to prevent CLI blocking.
 - 2026-07-22: Improved Assignment 1 WSL runner with automatic LinuxBridge fallback when OVS cannot start.
 - 2026-07-22: Improved Assignment 1 WSL runner with automatic loopback fallback when switch backends are unavailable.
+- 2026-07-22: Updated Assignment 1 runner to default to loopback mode on WSL for stability.

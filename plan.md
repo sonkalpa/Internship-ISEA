@@ -10,7 +10,7 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 | Milestone | Status | Target Output |
 |---|---|---|
 | M1 - Assignment 1 foundation | Completed | `assignment1/` folder with code and README added |
-| M2 - Assignment 1 validation and evidence | In Progress | WSL runner now supports OVS/LinuxBridge/loopback fallback; screenshots/report pending |
+| M2 - Assignment 1 validation and evidence | In Progress | WSL runner defaults to loopback on WSL; screenshots/report pending |
 | M3 - Assignment 3 foundation | Completed | `assignment3/` folder with `raw_capture.c` and README added |
 | M4 - Assignment 3 validation and evidence | In Progress | WSL automation script + traffic generator added; packet comparison/report pending |
 | M5 - Final consolidation | Pending | root docs finalized and submission-ready repo |
@@ -70,3 +70,4 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 - 2026-07-22: Added `run_wsl_assignment1.py` and wired shell runner to avoid Mininet CLI hang in WSL.
 - 2026-07-22: Added automatic LinuxBridge fallback in Assignment 1 WSL runner for OVS service failures.
 - 2026-07-22: Added loopback fallback in Assignment 1 WSL runner when OVS and LinuxBridge are both unavailable.
+- 2026-07-22: Defaulted WSL execution to loopback mode to prevent OVS startup hangs.

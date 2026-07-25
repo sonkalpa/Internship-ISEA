@@ -26,9 +26,12 @@ def _ovs_available() -> bool:
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
             check=False,
+            timeout=2,
         )
         return result.returncode == 0
     except FileNotFoundError:
+        return False
+    except subprocess.TimeoutExpired:
         return False
 
 
@@ -36,8 +39,20 @@ def _linuxbridge_available() -> bool:
     return shutil.which("brctl") is not None
 
 
+def _is_wsl() -> bool:
+    release = ""
+    try:
+        release = os.uname().release.lower()
+    except Exception:
+        return False
+    return "microsoft" in release or "wsl" in release
+
+
 def _choose_switch_class():
     forced = os.environ.get("A1_SWITCH", "").strip().lower()
+
+    if forced in {"loopback", "local"}:
+        return None, "Loopback fallback (forced)"
 
     if forced == "ovs":
         if _ovs_available():
@@ -48,6 +63,11 @@ def _choose_switch_class():
         if _linuxbridge_available():
             return LinuxBridge, "LinuxBridge (forced)"
         return None, "Loopback fallback (forced linuxbridge unavailable)"
+
+    if _is_wsl():
+        if _linuxbridge_available():
+            return LinuxBridge, "LinuxBridge (WSL default)"
+        return None, "Loopback fallback (WSL default)"
 
     if _ovs_available():
         return OVSBridge, "OVSBridge"

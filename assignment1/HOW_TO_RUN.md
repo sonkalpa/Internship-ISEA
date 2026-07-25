@@ -11,6 +11,12 @@ Run this one command from `assignment1/`:
 bash run_wsl_assignment1.sh
 ```
 
+If needed, force immediate local fallback explicitly:
+
+```bash
+A1_SWITCH=loopback bash run_wsl_assignment1.sh
+```
+
 It will:
 
 - run loss profiles `0`, `5`, `10` sequentially

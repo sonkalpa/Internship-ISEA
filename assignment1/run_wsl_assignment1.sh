@@ -20,6 +20,13 @@ sudo mn -c >/dev/null 2>&1 || true
 mkdir -p "$LOG_DIR"
 rm -f "$CSV_FILE"
 
+if [[ -z "${A1_SWITCH:-}" ]]; then
+  if uname -r | tr '[:upper:]' '[:lower:]' | grep -qE 'microsoft|wsl'; then
+    export A1_SWITCH="loopback"
+    echo "[info] WSL detected. Defaulting A1_SWITCH=loopback to avoid OVS hangs."
+  fi
+fi
+
 echo "[3/5] Running Assignment 1 profiles (loss=0,5,10) in WSL-safe mode..."
 sudo -E python3 "$SCRIPT_DIR/run_wsl_assignment1.py"
 
