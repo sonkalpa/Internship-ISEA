@@ -23,9 +23,13 @@ If it still hangs, run:
 
 ```bash
 sudo mn -c
-sudo service openvswitch-switch start
 bash run_wsl_assignment1.sh
 ```
+
+`run_wsl_assignment1.py` auto-selects switch mode:
+
+- uses `OVSBridge` when OVS is available
+- falls back to `LinuxBridge` when OVS service/tools are unavailable (common on WSL)
 
 ## Manual WSL Method (No `xterm`, no `tc/netem`)
 

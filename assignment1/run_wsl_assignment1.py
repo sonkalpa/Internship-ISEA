@@ -7,12 +7,41 @@ then executes loss profiles 0/5/10 with application-level loss emulation.
 """
 
 import os
+import subprocess
 import shlex
 import time
 
 from mininet.log import setLogLevel
 from mininet.net import Mininet
 from mininet.node import OVSBridge
+from mininet.nodelib import LinuxBridge
+
+
+def _ovs_available() -> bool:
+    try:
+        cmd = ["ovs-vsctl", "show"]
+        result = subprocess.run(
+            cmd,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            check=False,
+        )
+        return result.returncode == 0
+    except FileNotFoundError:
+        return False
+
+
+def _choose_switch_class():
+    forced = os.environ.get("A1_SWITCH", "").strip().lower()
+    if forced == "ovs":
+        return OVSBridge, "OVSBridge (forced)"
+    if forced == "linuxbridge":
+        return LinuxBridge, "LinuxBridge (forced)"
+
+    if _ovs_available():
+        return OVSBridge, "OVSBridge"
+
+    return LinuxBridge, "LinuxBridge (fallback - OVS unavailable)"
 
 
 def main():
@@ -23,16 +52,16 @@ def main():
 
     setLogLevel("warning")
 
-    net = Mininet(controller=None, switch=OVSBridge, build=False)
+    switch_cls, switch_label = _choose_switch_class()
+    net = Mininet(controller=None, switch=switch_cls, build=False)
     h1 = net.addHost("h1", ip="10.0.0.1/8")
     h2 = net.addHost("h2", ip="10.0.0.2/8")
     s1 = net.addSwitch("s1")
     net.addLink(h1, s1)
     net.addLink(h2, s1)
 
-    print("[runner] starting Mininet topology (h1 -- s1 -- h2)")
-    net.build()
-    s1.start([])
+    print(f"[runner] starting Mininet topology (h1 -- s1 -- h2) with {switch_label}")
+    net.start()
 
     try:
         ping_loss = net.pingAll()
