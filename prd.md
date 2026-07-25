@@ -95,7 +95,7 @@ Assignments in scope:
 | M1 - Assignment 1 setup and implementation | Completed | `assignment1/` created with UDP client/server and README |
 | M2 - Assignment 2 implementation and analysis | Completed | Existing deliverables in `assignment2/` |
 | M3 - Assignment 3 setup and implementation | Completed | `assignment3/` created with raw socket code and README |
-| M4 - Assignment 1 and 3 validation evidence | In Progress | A1 WSL execution artifacts generated; A3 uses one-command WSL runner; final evidence/report pending |
+| M4 - Assignment 1 and 3 validation evidence | In Progress | A1 WSL artifacts and report draft generated; screenshots/report.pdf and A3 evidence pending |
 | M5 - Final internship packaging and review | Not Started | Depends on M4 completion |
 
 ## 11) Change Log
@@ -113,3 +113,4 @@ Assignments in scope:
 - 2026-07-22: Improved Assignment 1 WSL runner with automatic loopback fallback when switch backends are unavailable.
 - 2026-07-22: Updated Assignment 1 runner to default to loopback mode on WSL for stability.
 - 2026-07-25: Updated PRD after successful Assignment 1 WSL run output generation.
+- 2026-07-25: Added Assignment 1 report draft and automated submission completeness checker.

@@ -48,7 +48,7 @@ The goal of this repository is to maintain a clear and organized record of:
 
 | Milestone | Status | Notes |
 |---|---|---|
-| Assignment 1 | In Progress | WSL execution complete with CSV/logs; screenshots and report pending |
+| Assignment 1 | In Progress | WSL execution complete; report draft and submission checker added |
 | Assignment 2 | Completed | Implementation, analysis, and docs available |
 | Assignment 3 | In Progress | WSL runner script and traffic generator added; evidence/report pending |
 

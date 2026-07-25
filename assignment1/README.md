@@ -27,7 +27,9 @@ assignment1/
   HOW_TO_RUN.md
   run_wsl_assignment1.sh
   run_wsl_assignment1.py
+  check_submission.py
   report_template.md
+  report.md
   result_table.csv            (generated)
   logs/                       (generated local run logs)
   screenshots/                (add required PNGs)
@@ -137,3 +139,11 @@ It must have 3 data rows for loss `0`, `5`, `10`.
 ## Detailed Run Guide
 
 Use `HOW_TO_RUN.md` for step-by-step execution and submission checklist.
+
+## Final Check Command
+
+After adding screenshots and `report.pdf`, run:
+
+```bash
+python3 check_submission.py
+```

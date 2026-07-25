@@ -126,3 +126,16 @@ Use `report_template.md` and create:
 
 - `report.pdf` (required)
 - optional editable source: `report.docx`
+
+`report.md` already contains a filled draft using current run outputs. You can
+reuse it directly while preparing the final PDF.
+
+## Submission readiness check
+
+Run:
+
+```bash
+python3 check_submission.py
+```
+
+This checks required files, screenshot filenames, `report.pdf`, and CSV format.
