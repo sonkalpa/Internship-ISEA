@@ -1,0 +1,348 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [3 0 R 4 0 R 5 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Length 1728 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(ASSIGNMENT 2 REPORT - TCP CONNECTION PERFORMANCE ANALYSIS USING MININET AND WIRESHARK) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. STUDENT DETAILS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Name: Sonkalpa Borah) Tj
+0 -14 Td
+(* Roll No: CS-BTC24-08) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. OBJECTIVE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(This assignment compares TCP communication performance between two modes:) Tj
+0 -14 Td
+(`persistent` \(single connection reused\) and `new_connection` \(new TCP) Tj
+0 -14 Td
+(connection per message\). The comparison is based on response time, throughput,) Tj
+0 -14 Td
+(and packet behavior observed in Wireshark.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. MININET TOPOLOGY AND SETUP) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Topology: `h1 -- s1 -- h2`) Tj
+0 -14 Td
+(* Server host: `h1` \(`10.0.0.1`\)) Tj
+0 -14 Td
+(* Client host: `h2` \(`10.0.0.2`\)) Tj
+0 -14 Td
+(* Link profile: `bw=5 Mbps`, `delay=50 ms`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Screenshots included:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `screenshots/nodes.png`) Tj
+0 -14 Td
+(* `screenshots/net.png`) Tj
+0 -14 Td
+(* `screenshots/pingall.png`) Tj
+0 -14 Td
+(* `screenshots/server_output.png`) Tj
+0 -14 Td
+(* `screenshots/client_output.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. PROGRAM DESIGN) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(MESSAGE FORMAT) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Request: `MSG_ID|MESSAGE_SIZE|MESSAGE_DATA`) Tj
+0 -14 Td
+(* Response: `ACK|MSG_ID|RECEIVED_SIZE`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(MODES) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `persistent`: one connection for all 10 messages per message size) Tj
+0 -14 Td
+(* `new_connection`: one connection for every message) Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 2077 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(LOGGING AND OUTPUTS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `server_log.txt`: per-message receive + ACK log) Tj
+0 -14 Td
+(* `message_response_log.csv`: per-message response times \(60 rows\)) Tj
+0 -14 Td
+(* `result_table.csv`: summary metrics \(6 rows\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. EXPERIMENTAL RESULTS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Result table \(`result_table.csv`\) contains 6 rows \(2 modes x 3 sizes\):) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(mode | message_size_bytes | average_response_time_seconds | throughput_bytes_per_second) Tj
+0 -14 Td
+(--- | ---: | ---: | ---:) Tj
+0 -14 Td
+(persistent | 128 | 0.000114 | 1020271.77) Tj
+0 -14 Td
+(persistent | 512 | 0.000184 | 2627838.18) Tj
+0 -14 Td
+(persistent | 1024 | 0.000095 | 9715702.05) Tj
+0 -14 Td
+(new_connection | 128 | 0.000407 | 328750.70) Tj
+0 -14 Td
+(new_connection | 512 | 0.000442 | 1162581.58) Tj
+0 -14 Td
+(new_connection | 1024 | 0.000362 | 2818630.76) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observed trend:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Persistent mode has slightly lower response time than new-connection mode.) Tj
+0 -14 Td
+(* Throughput increases as message size increases.) Tj
+0 -14 Td
+(* New-connection mode incurs additional connection setup/teardown overhead.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. GRAPHS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Generated graph files:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `graphs/mode_vs_response_time.png`) Tj
+0 -14 Td
+(* `graphs/message_size_vs_throughput.png`) Tj
+0 -14 Td
+(* `graphs/message_response_time.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Graph interpretation:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `mode_vs_response_time`: persistent mode performs better on average.) Tj
+0 -14 Td
+(* `message_size_vs_throughput`: larger payload size yields higher throughput.) Tj
+0 -14 Td
+(* `message_response_time`: response-time variation is higher for) Tj
+0 -14 Td
+(  new-connection due repeated handshakes.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7. WIRESHARK VERIFICATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Display filter used: `tcp.port == 5000`) Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 2436 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(Screenshots included:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `screenshots/persistent_handshake.png`) Tj
+0 -14 Td
+(* `screenshots/persistent_data_packets.png`) Tj
+0 -14 Td
+(* `screenshots/persistent_connection_close.png`) Tj
+0 -14 Td
+(* `screenshots/new_connection_multiple_handshakes.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Packet-level observations:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Persistent mode shows one initial three-way handshake and one final close.) Tj
+0 -14 Td
+(* New-connection mode shows repeated SYN/SYN-ACK/ACK and FIN sequences.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8. ANSWERS TO REQUIRED QUESTIONS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Why does TCP use a three-way handshake?) Tj
+0 -14 Td
+(   - It establishes synchronized sequence numbers and confirms both sides are) Tj
+0 -14 Td
+(     ready to communicate reliably.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. Which mode had lower response time?) Tj
+0 -14 Td
+(   - Persistent mode showed lower average response time.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. Why does new-connection mode have more overhead?) Tj
+0 -14 Td
+(   - Every message requires handshake and teardown packets, adding delay and) Tj
+0 -14 Td
+(     control traffic.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. Which mode is better for CampusChat and why?) Tj
+0 -14 Td
+(   - Persistent mode, because chat is interactive and benefits from avoiding) Tj
+0 -14 Td
+(     repeated connect overhead.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. Which mode is suitable for NetAttend and why?) Tj
+0 -14 Td
+(   - New-connection mode can be suitable for short periodic updates where each) Tj
+0 -14 Td
+(     request is independent and server state can stay simple.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. How does message size affect throughput?) Tj
+0 -14 Td
+(   - Throughput increases with message size because protocol overhead is) Tj
+0 -14 Td
+(     amortized over larger payloads.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7. How did Wireshark help verify TCP behavior?) Tj
+0 -14 Td
+(   - It visually confirmed handshake patterns, data exchanges, and connection) Tj
+0 -14 Td
+(     close behavior for each mode.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(9. CONCLUSION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The TCP implementation meets assignment requirements for both modes, produces) Tj
+0 -14 Td
+(the required CSV files and graphs, and Wireshark evidence confirms the expected) Tj
+0 -14 Td
+(protocol behavior differences between persistent and new-connection designs.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000379 00000 n 
+0000000505 00000 n 
+0000002285 00000 n 
+0000004414 00000 n 
+0000006902 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6972
+%%EOF

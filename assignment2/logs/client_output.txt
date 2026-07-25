@@ -1,0 +1,7 @@
+[client] mode=persistent size=128B avg_rt=0.0001s throughput=1020271.77 B/s
+[client] mode=persistent size=512B avg_rt=0.0002s throughput=2627838.18 B/s
+[client] mode=persistent size=1024B avg_rt=0.0001s throughput=9715702.05 B/s
+[client] mode=new_connection size=128B avg_rt=0.0004s throughput=328750.70 B/s
+[client] mode=new_connection size=512B avg_rt=0.0004s throughput=1162581.58 B/s
+[client] mode=new_connection size=1024B avg_rt=0.0004s throughput=2818630.76 B/s
+[client] Done. Wrote message_response_log.csv and result_table.csv

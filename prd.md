@@ -105,7 +105,8 @@ Assignments in scope:
 | M3 - Assignment 3 setup and implementation | Completed | `assignment3/` created with raw socket code and README |
 | M4 - Assignment 1 and 3 validation evidence | Completed | A1 and A3 evidence/report artifacts completed and verified |
 | M5 - Final packaging for A1-A3 | Completed | root docs and milestone trackers refreshed |
-| M6 - Assignment 4 execution | In Progress | Mininet run completed with logs, capture evidence, screenshots, graphs, and report artifacts |
+| M6 - Assignment 4 execution | Completed | Mininet run completed with logs, capture evidence, screenshots, graphs, and report artifacts |
+| M7 - Final packaging for A1-A4 | Completed | assignment-wise audit finished and zip-ready deliverables generated |
 
 ## 11) Change Log
 
@@ -129,3 +130,7 @@ Assignments in scope:
 - 2026-07-25: Started Assignment 4 implementation with server/client scaffold, performance runner, and graph generator.
 - 2026-07-25: Added Assignment 4 WSL Mininet automation, packet-capture evidence generation, and submission checker.
 - 2026-07-25: Generated Assignment 4 performance CSV, graphs, required screenshot set, and final report PDF.
+- 2026-07-25: Added Assignment 2 WSL Mininet automation and completeness checker to close missing screenshot/report artifacts.
+- 2026-07-25: Completed Assignment 2 requirement gaps and finalized `report.pdf`.
+- 2026-07-25: Performed full A1-A4 requirement audit against assignment PDFs.
+- 2026-07-25: Generated final zip submission packages for Assignments 1-4 under `submissions/`.

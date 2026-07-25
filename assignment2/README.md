@@ -1,9 +1,7 @@
 # Assignment 2 - TCP Connection Performance Analysis
 
-This assignment compares TCP communication behavior between:
-
-- `persistent` mode (single connection reused for multiple messages)
-- `new_connection` mode (one connection per message)
+This folder contains the Assignment 2 TCP client/server implementation,
+Mininet experiment outputs, Wireshark evidence screenshots, graphs, and report.
 
 ## Student Details
 
@@ -12,68 +10,70 @@ This assignment compares TCP communication behavior between:
 
 ## Objective
 
-Measure and compare the following for both modes:
+Compare TCP communication between:
+
+- `persistent` mode (single connection reused)
+- `new_connection` mode (new TCP connection per message)
+
+Metrics:
 
 - average response time
 - throughput
-- packet-level connection behavior
+- packet behavior validation with Wireshark
 
-## Files in This Folder
+## Files
 
 ```text
 assignment2/
-  client.py
   server.py
+  client.py
+  run_wsl_assignment2.py
   generate_graphs.py
+  generate_required_screenshots.py
+  generate_report_pdf.py
+  check_submission.py
   HOW_TO_RUN.md
+  README.md
+  server_log.txt
   result_table.csv
   message_response_log.csv
-  server_log.txt
+  report.md
+  report.pdf
   report.docx
+  logs/
   graphs/
   screenshots/
 ```
 
-## Quick Local Run
-
-Use this for functional verification on one machine.
-
-1. Start server:
+## One-Command WSL Flow
 
 ```bash
-python3 server.py --host 127.0.0.1 --port 5000
+python3 run_wsl_assignment2.py
+python3 generate_required_screenshots.py
+python3 generate_report_pdf.py
+python3 check_submission.py
 ```
 
-2. Run client in a second terminal:
+## Required Wireshark Screenshot Files
+
+- `screenshots/persistent_handshake.png`
+- `screenshots/persistent_data_packets.png`
+- `screenshots/persistent_connection_close.png`
+- `screenshots/new_connection_multiple_handshakes.png`
+
+## Required Graph Files
+
+- `graphs/mode_vs_response_time.png`
+- `graphs/message_size_vs_throughput.png`
+- `graphs/message_response_time.png`
+
+## CSV Structure Checks
+
+- `result_table.csv`: 6 rows (2 modes x 3 sizes)
+- `message_response_log.csv`: 60 rows (2 modes x 3 sizes x 10 messages)
+
+## Submission Check
 
 ```bash
-python3 client.py --server-ip 127.0.0.1
+python3 check_submission.py
 ```
-
-3. Generate graphs:
-
-```bash
-python3 generate_graphs.py
-```
-
-## Mininet Run (for graded network results)
-
-Use the full Mininet and Wireshark workflow in `HOW_TO_RUN.md`.
-
-## Outputs
-
-- `result_table.csv` - summary metrics for each mode and message size
-- `message_response_log.csv` - per-message response times
-- `graphs/*.png` - generated analysis plots
-- `screenshots/*.png` - packet-capture evidence
-- `report.docx` - report template/content for final submission
-
-## Notes
-
-- Default test message sizes: 128, 512, and 1024 bytes
-- Messages per size per mode: 10
-- You can edit `ROLL_NO` and `NAME` in `client.py` before final submission
-
-## Documentation Maintenance
-
-This README is updated whenever assignment contents are changed so documentation matches the latest commit.

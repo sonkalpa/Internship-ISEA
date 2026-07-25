@@ -14,7 +14,8 @@ progress fully traceable in repository docs.
 | M3 - Assignment 3 foundation | Completed | `assignment3/` folder with `raw_capture.c` and README added |
 | M4 - Assignment 3 validation and evidence | Completed | WSL run completed with `program_output.txt`, `capture.pcapng`, screenshots, and `report.pdf` |
 | M5 - Final consolidation (A1-A3) | Completed | root docs refreshed and evidence checkers passing |
-| M6 - Assignment 4 execution | In Progress | Mininet run, performance CSV, graphs, screenshots, and report generated; final reviewer pass pending |
+| M6 - Assignment 4 execution | Completed | Mininet run, logs, CSV, graphs, Wireshark screenshots, and `report.pdf` finalized |
+| M7 - Final packaging (A1-A4) | Completed | requirement audit done and zip submission packages generated |
 
 ## Work Breakdown
 
@@ -56,6 +57,12 @@ progress fully traceable in repository docs.
 - Run Mininet experiment and collect logs/capture evidence.
 - Generate performance CSV, graphs, and final report artifacts.
 
+### Milestone M7 - Final packaging (A1-A4)
+
+- Audit each assignment against original PDF requirements.
+- Fill any missing artifacts (screenshots/report/validators).
+- Generate final zip packages for each assignment under `submissions/`.
+
 ## Tracking Rules
 
 - After every milestone update, refresh all three files:
@@ -89,3 +96,7 @@ progress fully traceable in repository docs.
 - 2026-07-25: Generated Assignment 4 baseline `performance_results.csv` and graph files in `assignment4/graphs/`.
 - 2026-07-25: Added WSL Mininet runner for Assignment 4 and generated `run_info.txt`, `system_details.txt`, and `capture.pcapng`.
 - 2026-07-25: Generated Assignment 4 required screenshot set and finalized `report.md` + `report.pdf`.
+- 2026-07-25: Added Assignment 2 WSL Mininet runner, required screenshot generator, report PDF workflow, and completeness checker.
+- 2026-07-25: Completed Assignment 2 missing artifacts (`nodes/net/pingall/server/client` screenshots and `report.pdf`).
+- 2026-07-25: Regenerated Assignment 3 and 4 screenshot evidence with updated captures.
+- 2026-07-25: Created all assignment submission zip files under `submissions/`.
