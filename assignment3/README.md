@@ -102,6 +102,9 @@ ssh 127.0.0.1
 - `wireshark_packets.png`
 - `comparison_packets.png`
 
+For replacing generated screenshots with original captures from your own run,
+follow `ORIGINAL_SCREENSHOT_STEPS.md`.
+
 ## Completed Artifacts
 
 - captured 20 TCP packets in `program_output.txt`

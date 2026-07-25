@@ -90,6 +90,9 @@ bash run_wsl_assignment4.sh
 This executes Mininet flow, collects logs/capture, and generates graphs plus
 required screenshot artifacts.
 
+To replace generated screenshots with original Wireshark captures, use
+`ORIGINAL_SCREENSHOT_STEPS.md`.
+
 ## Mininet Mapping (Assignment Requirement)
 
 - `h1`: `python3 server.py`
