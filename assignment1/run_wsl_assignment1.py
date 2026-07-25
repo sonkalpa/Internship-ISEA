@@ -7,6 +7,7 @@ then executes loss profiles 0/5/10 with application-level loss emulation.
 """
 
 import os
+import shutil
 import subprocess
 import shlex
 import time
@@ -31,17 +32,102 @@ def _ovs_available() -> bool:
         return False
 
 
+def _linuxbridge_available() -> bool:
+    return shutil.which("brctl") is not None
+
+
 def _choose_switch_class():
     forced = os.environ.get("A1_SWITCH", "").strip().lower()
+
     if forced == "ovs":
-        return OVSBridge, "OVSBridge (forced)"
+        if _ovs_available():
+            return OVSBridge, "OVSBridge (forced)"
+        return None, "Loopback fallback (forced ovs unavailable)"
+
     if forced == "linuxbridge":
-        return LinuxBridge, "LinuxBridge (forced)"
+        if _linuxbridge_available():
+            return LinuxBridge, "LinuxBridge (forced)"
+        return None, "Loopback fallback (forced linuxbridge unavailable)"
 
     if _ovs_available():
         return OVSBridge, "OVSBridge"
 
-    return LinuxBridge, "LinuxBridge (fallback - OVS unavailable)"
+    if _linuxbridge_available():
+        return LinuxBridge, "LinuxBridge (fallback - OVS unavailable)"
+
+    return None, "Loopback fallback (OVS and LinuxBridge unavailable)"
+
+
+def _run_local_profiles(script_dir: str, log_dir: str):
+    print("[runner] starting local loopback fallback mode (no Mininet switch backend)")
+
+    for loss in (0, 5, 10):
+        print(f"[runner] running profile loss={loss}% (loopback)")
+
+        server_log = os.path.join(log_dir, f"server_loss{loss}.out.txt")
+        client_log = os.path.join(log_dir, f"client_loss{loss}.txt")
+
+        server_cmd = [
+            "python3",
+            "server.py",
+            "--host",
+            "127.0.0.1",
+            "--port",
+            "5000",
+            "--expected",
+            "10",
+            "--reply-delay-ms",
+            "30",
+        ]
+        with open(server_log, "w", encoding="utf-8", newline="\n") as sf:
+            server_proc = subprocess.Popen(  # noqa: S603
+                server_cmd,
+                cwd=script_dir,
+                stdout=sf,
+                stderr=sf,
+                text=True,
+            )
+
+        time.sleep(1.0)
+
+        client_cmd = [
+            "python3",
+            "client.py",
+            "--server-ip",
+            "127.0.0.1",
+            "--port",
+            "5000",
+            "--loss-percent",
+            str(loss),
+            "--timeout",
+            "1.5",
+            "--emulate-loss",
+            "--seed",
+            "2408",
+        ]
+
+        completed = subprocess.run(  # noqa: S603
+            client_cmd,
+            cwd=script_dir,
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            check=False,
+        )
+
+        with open(client_log, "w", encoding="utf-8", newline="\n") as cf:
+            cf.write(completed.stdout)
+
+        try:
+            server_proc.wait(timeout=20)
+        except subprocess.TimeoutExpired:
+            server_proc.terminate()
+            try:
+                server_proc.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                server_proc.kill()
+
+    print("[runner] profiles complete")
 
 
 def main():
@@ -53,6 +139,12 @@ def main():
     setLogLevel("warning")
 
     switch_cls, switch_label = _choose_switch_class()
+
+    if switch_cls is None:
+        print(f"[runner] switch backend unavailable: {switch_label}")
+        _run_local_profiles(script_dir, log_dir)
+        return
+
     net = Mininet(controller=None, switch=switch_cls, build=False)
     h1 = net.addHost("h1", ip="10.0.0.1/8")
     h2 = net.addHost("h2", ip="10.0.0.2/8")

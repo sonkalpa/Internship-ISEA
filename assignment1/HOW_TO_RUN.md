@@ -18,6 +18,8 @@ It will:
 - generate logs under `logs/`
 - use an internal Python Mininet runner (`run_wsl_assignment1.py`) to avoid
   CLI hang issues in some WSL setups
+- auto-fallback to local loopback execution if both OVS and `brctl`
+  (LinuxBridge) are unavailable
 
 If it still hangs, run:
 
@@ -30,6 +32,7 @@ bash run_wsl_assignment1.sh
 
 - uses `OVSBridge` when OVS is available
 - falls back to `LinuxBridge` when OVS service/tools are unavailable (common on WSL)
+- falls back to local loopback mode when both switch backends are unavailable
 
 ## Manual WSL Method (No `xterm`, no `tc/netem`)
 

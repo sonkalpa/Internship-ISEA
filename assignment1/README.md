@@ -85,6 +85,7 @@ If `tc/netem` is unavailable (for example on WSL2), use the fallback mode in
 
 - server flag: `--reply-delay-ms 30`
 - client flag: `--emulate-loss`
+- runner fallback: automatic loopback mode if Mininet switch backends are missing
 
 Fastest WSL command:
 
