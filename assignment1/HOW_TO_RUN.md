@@ -16,6 +16,16 @@ It will:
 - run loss profiles `0`, `5`, `10` sequentially
 - generate `result_table.csv`
 - generate logs under `logs/`
+- use an internal Python Mininet runner (`run_wsl_assignment1.py`) to avoid
+  CLI hang issues in some WSL setups
+
+If it still hangs, run:
+
+```bash
+sudo mn -c
+sudo service openvswitch-switch start
+bash run_wsl_assignment1.sh
+```
 
 ## Manual WSL Method (No `xterm`, no `tc/netem`)
 

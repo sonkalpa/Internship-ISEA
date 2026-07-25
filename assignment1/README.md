@@ -26,6 +26,7 @@ assignment1/
   server.py
   HOW_TO_RUN.md
   run_wsl_assignment1.sh
+  run_wsl_assignment1.py
   report_template.md
   result_table.csv            (generated)
   logs/                       (generated local run logs)

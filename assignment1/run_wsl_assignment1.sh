@@ -21,20 +21,7 @@ mkdir -p "$LOG_DIR"
 rm -f "$CSV_FILE"
 
 echo "[3/5] Running Assignment 1 profiles (loss=0,5,10) in WSL-safe mode..."
-for loss in 0 5 10; do
-  echo "  - profile loss=${loss}%"
-
-  sudo mn --topo single,2 --controller none <<EOF >/dev/null
-h1 bash -lc "cd $SCRIPT_DIR && python3 server.py --host 10.0.0.1 --port 5000 --expected 10 --reply-delay-ms 30 > logs/server_loss${loss}.out.txt 2>&1 &"
-py import time; time.sleep(1)
-h2 bash -lc "cd $SCRIPT_DIR && python3 client.py --server-ip 10.0.0.1 --port 5000 --loss-percent ${loss} --timeout 1.5 --emulate-loss --seed 2408 > logs/client_loss${loss}.txt 2>&1"
-py import time; time.sleep(1)
-h1 pkill -f "python3 server.py" || true
-exit
-EOF
-
-  sudo mn -c >/dev/null 2>&1 || true
-done
+sudo -E python3 "$SCRIPT_DIR/run_wsl_assignment1.py"
 
 echo "[4/5] Generated files:"
 echo "  - $CSV_FILE"
