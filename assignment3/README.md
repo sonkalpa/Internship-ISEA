@@ -24,14 +24,17 @@ assignment3/
   README.md
   HOW_TO_RUN.md
   run_wsl_assignment3.sh
+  check_submission.py
   report_template.md
+  generate_report_pdf.py
   packet_comparison_template.csv
-  screenshots/                (add required PNGs)
-  program_output.txt          (replace template with actual output)
-  system_details.txt          (replace template with Linux command output)
-  traffic_generation_output.txt (generated)
-  capture.pcapng              (to be generated)
-  report.pdf                  (to be added)
+  screenshots/                (required PNGs)
+  program_output.txt          (captured)
+  system_details.txt          (captured)
+  traffic_generation_output.txt
+  capture.pcapng
+  report.md
+  report.pdf
 ```
 
 ## Implemented Program Behavior
@@ -89,6 +92,8 @@ ssh 127.0.0.1
   - `tcp`
   - `ip.proto == 6`
 - save capture file as `capture.pcapng`
+- this repository run used `dumpcap` for capture because `tshark` was not
+  available in the WSL image
 
 ## Required Screenshots
 
@@ -97,15 +102,25 @@ ssh 127.0.0.1
 - `wireshark_packets.png`
 - `comparison_packets.png`
 
-## Remaining Work
+## Completed Artifacts
 
-- run live experiment and save `program_output.txt`
-- collect Wireshark packet comparison table for 5 packets
-- complete report sections (header analysis, reflection answers)
-- follow detailed Linux checklist in `HOW_TO_RUN.md`
+- captured 20 TCP packets in `program_output.txt`
+- generated TCP traffic evidence in `traffic_generation_output.txt`
+- captured network trace in `capture.pcapng`
+- filled 5-row comparison in `packet_comparison_template.csv`
+- completed report in `report.md` and `report.pdf`
+- generated required screenshot files in `screenshots/`
 
 ## Fast WSL Command
 
 ```bash
 bash run_wsl_assignment3.sh
+```
+
+## Submission Check
+
+Run this local checker before final zip submission:
+
+```bash
+python3 check_submission.py
 ```

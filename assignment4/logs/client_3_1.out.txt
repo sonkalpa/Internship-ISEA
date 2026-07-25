@@ -1,0 +1,67 @@
+[ClientA] auto-01
+[ClientB] auto-01
+[ClientC] auto-01
+[ClientA] auto-02
+[ClientC] auto-02
+[ClientB] auto-02
+[ClientA] auto-03
+[ClientC] auto-03
+[ClientB] auto-03
+[ClientA] auto-04
+[ClientC] auto-04
+[ClientB] auto-04
+[ClientA] auto-05
+[ClientB] auto-05
+[ClientC] auto-05
+[ClientA] auto-06
+[ClientB] auto-06
+[ClientC] auto-06
+[ClientA] auto-07
+[ClientC] auto-07
+[ClientB] auto-07
+[ClientB] auto-08
+[ClientA] auto-08
+[ClientC] auto-08
+[ClientB] auto-09
+[ClientA] auto-09
+[ClientC] auto-09
+[ClientA] auto-10
+[ClientB] auto-10
+[ClientC] auto-10
+[ClientB] auto-11
+[ClientC] auto-11
+[ClientA] auto-11
+[ClientB] auto-12
+[ClientA] auto-12
+[ClientC] auto-12
+[ClientB] auto-13
+[ClientC] auto-13
+[ClientA] auto-13
+[ClientA] auto-14
+[ClientC] auto-14
+[ClientB] auto-14
+[ClientC] auto-15
+[ClientB] auto-15
+[ClientA] auto-15
+[ClientA] auto-16
+[ClientC] auto-16
+[ClientB] auto-16
+[ClientA] auto-17
+[ClientC] auto-17
+[ClientB] auto-17
+[ClientA] auto-18
+[ClientB] auto-18
+[ClientC] auto-18
+[ClientB] auto-19
+[ClientC] auto-19
+[ClientA] auto-19
+[ClientC] auto-20
+[ClientB] auto-20
+[ClientA] auto-20
+{
+  "username": "ClientA",
+  "sent_messages": 20,
+  "received_own_broadcasts": 20,
+  "avg_delivery_time_ms": 28.077,
+  "duration_sec": 1.605
+}

@@ -1,0 +1,326 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [3 0 R 4 0 R 5 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Length 1997 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(ASSIGNMENT 4 REPORT - MULTI-CLIENT CHAT SERVER USING TCP) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. OBJECTIVE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The objective is to implement a concurrent TCP chat application where multiple) Tj
+0 -14 Td
+(clients communicate through one server, validate protocol behavior with packet) Tj
+0 -14 Td
+(capture, and evaluate performance for 1, 2, and 3 simultaneous clients.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. NETWORK TOPOLOGY) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Mininet topology used: `single,4`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `h1`: Chat server \(`10.0.0.1`\)) Tj
+0 -14 Td
+(* `h2`: ClientA \(`10.0.0.2`\)) Tj
+0 -14 Td
+(* `h3`: ClientB \(`10.0.0.3`\)) Tj
+0 -14 Td
+(* `h4`: ClientC \(`10.0.0.4`\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Execution backend details from `run_info.txt`:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `SWITCH_BACKEND=LinuxBridge \(WSL default\)`) Tj
+0 -14 Td
+(* `PINGALL_LOSS_PERCENT=0.0`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. PROGRAM DESIGN) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(SERVER \(`SERVER.PY`\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Listens on TCP port `5000`.) Tj
+0 -14 Td
+(* Accepts multiple clients concurrently using threads.) Tj
+0 -14 Td
+(* First line from each client is treated as username registration.) Tj
+0 -14 Td
+(* Broadcasts each received message to all connected clients in format:) Tj
+0 -14 Td
+(  - `[username] message`) Tj
+0 -14 Td
+(* Logs connection lifecycle events in `server_events.log` using:) Tj
+0 -14 Td
+(  - `timestamp,EVENT,username,client_ip`) Tj
+0 -14 Td
+(* Logs chat messages in `chat_log.txt` using:) Tj
+0 -14 Td
+(  - `timestamp,username,message`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(CLIENT \(`CLIENT.PY`\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Registers username immediately after connecting.) Tj
+0 -14 Td
+(* Supports interactive mode and auto mode \(`--auto-count`, `--auto-delay`\).) Tj
+0 -14 Td
+(* Measures own message broadcast round-trip delay samples.) Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 1878 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(4. EXPERIMENTAL RESULTS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Performance experiment executed for 1, 2, and 3 clients. Each client sent 20) Tj
+0 -14 Td
+(messages.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(From `performance_results.csv`:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(clients | total_messages | avg_delivery_time_ms | throughput_msgs_per_sec) Tj
+0 -14 Td
+(---: | ---: | ---: | ---:) Tj
+0 -14 Td
+(1 | 20 | 1.619 | 11.987) Tj
+0 -14 Td
+(2 | 40 | 28.768 | 23.947) Tj
+0 -14 Td
+(3 | 60 | 29.007 | 35.880) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observations:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Total delivered messages scale linearly with client count.) Tj
+0 -14 Td
+(* Throughput increases with more clients due higher aggregate send rate.) Tj
+0 -14 Td
+(* Average delivery time rises under concurrent multi-client load.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. WIRESHARK VERIFICATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Capture filter used: `tcp.port == 5000`.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Captured artifact: `capture.pcapng`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Required screenshot files:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `screenshots/tcp_handshake.png`) Tj
+0 -14 Td
+(* `screenshots/chat_message.png`) Tj
+0 -14 Td
+(* `screenshots/broadcast_message.png`) Tj
+0 -14 Td
+(* `screenshots/connection_close.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Verified protocol events:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* TCP three-way handshake \(`SYN`, `SYN-ACK`, `ACK`\).) Tj
+0 -14 Td
+(* Chat message packet with payload \(`PSH,ACK`\) from client to server.) Tj
+0 -14 Td
+(* Server payload broadcasts to multiple client destinations.) Tj
+0 -14 Td
+(* TCP connection teardown \(`FIN/ACK` sequence\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. GRAPH ANALYSIS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Generated graphs:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `graphs/clients_vs_delay.png`) Tj
+0 -14 Td
+(* `graphs/clients_vs_throughput.png`) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 2091 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+() Tj
+0 -14 Td
+(Trend summary:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Delay graph shows low latency for one client and higher delay when multiple) Tj
+0 -14 Td
+(  clients send simultaneously.) Tj
+0 -14 Td
+(* Throughput graph rises from 1 to 3 clients, indicating increased aggregate) Tj
+0 -14 Td
+(  message handling capacity.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7. REFLECTION ANSWERS \(<= 300 WORDS\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(A multi-threaded server is preferred because each client can be handled without) Tj
+0 -14 Td
+(blocking others. In a single-threaded design, one slow client operation can) Tj
+0 -14 Td
+(delay all remaining clients and reduce responsiveness.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(When many clients communicate at the same time, common challenges include) Tj
+0 -14 Td
+(shared-state synchronization, ordering of broadcasts, client disconnect) Tj
+0 -14 Td
+(handling, and avoiding race conditions in message/event logs.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(TCP reliability comes from connection-oriented state, sequence numbers,) Tj
+0 -14 Td
+(acknowledgments, retransmissions, and in-order delivery guarantees. For chat,) Tj
+0 -14 Td
+(this means messages are delivered reliably and without corruption at the) Tj
+0 -14 Td
+(application layer.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Wireshark verification was supported by observing handshake packets,) Tj
+0 -14 Td
+(application-data packets \(`PSH,ACK`\), server-to-client broadcast packets, and) Tj
+0 -14 Td
+(connection termination \(`FIN,ACK`\). These packet-level observations matched the) Tj
+0 -14 Td
+(server/client runtime behavior and log timelines.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8. CONCLUSION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The assignment requirements were implemented with a threaded TCP server,) Tj
+0 -14 Td
+(username registration, broadcast messaging, performance measurement for 1/2/3) Tj
+0 -14 Td
+(clients, packet-capture verification, and graph generation. The collected logs,) Tj
+0 -14 Td
+(CSV, graphs, and packet evidence are consistent with expected multi-client chat) Tj
+0 -14 Td
+(behavior.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000379 00000 n 
+0000000505 00000 n 
+0000002554 00000 n 
+0000004484 00000 n 
+0000006627 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+6697
+%%EOF

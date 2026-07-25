@@ -2,7 +2,7 @@
 
 ## 1) Product Overview
 
-This repository documents and delivers three internship assignments under the
+This repository documents and delivers internship assignments under the
 Summer Internship on Cyber Security and Secure App Development.
 
 Assignments in scope:
@@ -10,6 +10,7 @@ Assignments in scope:
 1. Assignment 1 - Reliable UDP in Mininet
 2. Assignment 2 - TCP Wireshark Performance Analysis in Mininet
 3. Assignment 3 - Raw Socket Packet Analysis
+4. Assignment 4 - Multi-Client Chat Server over TCP
 
 ## 2) Objectives
 
@@ -61,6 +62,12 @@ Assignments in scope:
 - Protocol-level observations with evidence.
 - Assignment-specific README in `assignment3/`.
 
+### Assignment 4 - Multi-Client Chat Server
+
+- Concurrent TCP chat server implementation.
+- Multi-client messaging validation evidence.
+- Assignment-specific README in `assignment4/`.
+
 ## 6) Functional Requirements
 
 - Each assignment folder must include runnable scripts and clear run steps.
@@ -78,6 +85,7 @@ Assignments in scope:
 ## 8) Acceptance Criteria
 
 - A1, A2, A3 each contain code + evidence + assignment README.
+- A4 contains code + evidence + assignment README when that milestone is done.
 - Root `README.md` reflects latest overall progress.
 - `plan.md` milestone table is current.
 - `prd.md` is updated whenever scope or requirements materially change.
@@ -95,8 +103,9 @@ Assignments in scope:
 | M1 - Assignment 1 setup and implementation | Completed | `assignment1/` created with UDP client/server and README |
 | M2 - Assignment 2 implementation and analysis | Completed | Existing deliverables in `assignment2/` |
 | M3 - Assignment 3 setup and implementation | Completed | `assignment3/` created with raw socket code and README |
-| M4 - Assignment 1 and 3 validation evidence | In Progress | A1 validation/evidence complete; A3 evidence and report still pending |
-| M5 - Final internship packaging and review | Not Started | Depends on M4 completion |
+| M4 - Assignment 1 and 3 validation evidence | Completed | A1 and A3 evidence/report artifacts completed and verified |
+| M5 - Final packaging for A1-A3 | Completed | root docs and milestone trackers refreshed |
+| M6 - Assignment 4 execution | In Progress | Mininet run completed with logs, capture evidence, screenshots, graphs, and report artifacts |
 
 ## 11) Change Log
 
@@ -115,3 +124,8 @@ Assignments in scope:
 - 2026-07-25: Updated PRD after successful Assignment 1 WSL run output generation.
 - 2026-07-25: Added Assignment 1 report draft and automated submission completeness checker.
 - 2026-07-25: Updated PRD after Assignment 1 screenshot collection and final report generation.
+- 2026-07-25: Updated PRD after Assignment 3 capture evidence, packet comparison, screenshots, and report completion.
+- 2026-07-25: Expanded assignment scope to include Assignment 4 planning milestone.
+- 2026-07-25: Started Assignment 4 implementation with server/client scaffold, performance runner, and graph generator.
+- 2026-07-25: Added Assignment 4 WSL Mininet automation, packet-capture evidence generation, and submission checker.
+- 2026-07-25: Generated Assignment 4 performance CSV, graphs, required screenshot set, and final report PDF.

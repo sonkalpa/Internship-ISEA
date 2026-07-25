@@ -1,0 +1,474 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 5 /Kids [3 0 R 4 0 R 5 0 R 6 0 R 7 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 8 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 9 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 10 0 R >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 11 0 R >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 13 0 R >> >> /Contents 12 0 R >>
+endobj
+8 0 obj
+<< /Length 1888 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(ASSIGNMENT 3 REPORT - RAW SOCKET PACKET ANALYSIS AND PROTOCOL INVESTIGATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. OBJECTIVE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The objective of this assignment is to capture and inspect raw IP packets using) Tj
+0 -14 Td
+(Linux raw sockets, extract mandatory IP header fields, extract protocol-specific) Tj
+0 -14 Td
+(TCP fields, and validate the observations against Wireshark capture evidence.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. STUDENT AND SYSTEM CONFIGURATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Name: Sonkalpa Borah) Tj
+0 -14 Td
+(* Roll No: CS-BTC24-08) Tj
+0 -14 Td
+(* Last digit: `8`) Tj
+0 -14 Td
+(* Assigned protocol: `TCP` \(`ip.proto == 6`\)) Tj
+0 -14 Td
+(* Environment: Ubuntu on WSL2) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(System details \(from `system_details.txt`\):) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `uname -a`: Linux 5.15.167.4-microsoft-standard-WSL2 x86_64) Tj
+0 -14 Td
+(* `gcc --version`: GCC 13.3.0 \(Ubuntu 24.04\)) Tj
+0 -14 Td
+(* capture interface used: `lo`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. COMPILE AND RUN COMMANDS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `gcc raw_capture.c -o raw_capture`) Tj
+0 -14 Td
+(* `sudo ./raw_capture 20`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Traffic generation command used:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `python3 generate_tcp_traffic.py --count 150 --port 5000 --delay 0.02 --startup-delay 0.8`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Capture command used:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `sudo dumpcap -i lo -a duration:20 -w capture.pcapng`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. PROGRAM DESIGN) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(`raw_capture.c` uses `socket\(AF_INET, SOCK_RAW, IPPROTO_TCP\)` for TCP packet) Tj
+0 -14 Td
+(capture and prints details for 20 packets.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Per packet, the program prints:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `SRC_IP`, `DST_IP`) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Length 1706 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(* `PROTOCOL`, `PROTOCOL_NO`) Tj
+0 -14 Td
+(* `TTL`) Tj
+0 -14 Td
+(* `PACKET_SIZE`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(TCP-specific fields:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `TCP_SRC_PORT`) Tj
+0 -14 Td
+(* `TCP_DST_PORT`) Tj
+0 -14 Td
+(* `TCP_FLAGS` \(decoded as `SYN`, `ACK`, `FIN`, `PSH`, etc.\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Program enhancement field \(Task 5\):) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `IP_IDENTIFICATION`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. TRAFFIC GENERATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Traffic was generated locally on loopback by repeatedly creating TCP) Tj
+0 -14 Td
+(connections between a client and local server \(`127.0.0.1:5000`\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* command: `python3 generate_tcp_traffic.py --count 150 --port 5000 --delay 0.02 --startup-) Tj
+0 -14 Td
+(delay 0.8`) Tj
+0 -14 Td
+(* interface observed: `lo`) Tj
+0 -14 Td
+(* output file: `traffic_generation_output.txt`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observed output:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `Generated 150 TCP connections to 127.0.0.1:5000`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. EXPERIMENTAL RESULTS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The program captured 20 TCP packets successfully \(`program_output.txt`\) with the) Tj
+0 -14 Td
+(required format:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `ROLL_NO=CS-BTC24-08`) Tj
+0 -14 Td
+(* `ASSIGNED_PROTOCOL=TCP`) Tj
+0 -14 Td
+(* `PACKET_NO=1..20`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Example first packet:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `SRC_IP=127.0.0.1`) Tj
+0 -14 Td
+(* `DST_IP=127.0.0.1`) Tj
+0 -14 Td
+(* `PROTOCOL_NO=6`) Tj
+0 -14 Td
+(* `TTL=64`) Tj
+0 -14 Td
+(* `PACKET_SIZE=60`) Tj
+0 -14 Td
+(* `TCP_SRC_PORT=37286`, `TCP_DST_PORT=5000`, `TCP_FLAGS=SYN`) Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Length 2365 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(7. WIRESHARK VERIFICATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Capture file: `capture.pcapng`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Display filter used: `tcp` \(equivalent to `ip.proto == 6`\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Five-packet comparison table \(from `packet_comparison_template.csv`\):) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Wireshark Frame | Source IP | Destination IP | Protocol | TTL | Packet Size | Program Output) Tj
+0 -14 Td
+(Matched) Tj
+0 -14 Td
+(---: | --- | --- | --- | ---: | ---: | ---) Tj
+0 -14 Td
+(1 | 127.0.0.1 | 127.0.0.1 | TCP | 64 | 60 | Yes) Tj
+0 -14 Td
+(2 | 127.0.0.1 | 127.0.0.1 | TCP | 64 | 60 | Yes) Tj
+0 -14 Td
+(3 | 127.0.0.1 | 127.0.0.1 | TCP | 64 | 52 | Yes) Tj
+0 -14 Td
+(4 | 127.0.0.1 | 127.0.0.1 | TCP | 64 | 60 | Yes) Tj
+0 -14 Td
+(5 | 127.0.0.1 | 127.0.0.1 | TCP | 64 | 52 | Yes) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8. HEADER ANALYSIS \(3 PACKETS\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Packets analyzed: Frame 1, Frame 4, Frame 6.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Why is TTL not zero?) Tj
+0 -14 Td
+(   - TTL is initialized by sender \(64 here\) and decremented per router hop. On) Tj
+0 -14 Td
+(     loopback \(`127.0.0.1`\), packets do not traverse routers, so TTL remains 64) Tj
+0 -14 Td
+(     and never reaches zero.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. Why do packet sizes differ?) Tj
+0 -14 Td
+(   - Different TCP segments carry different payload/control content. For example,) Tj
+0 -14 Td
+(     SYN packets are 60 bytes, pure ACK packets are 52 bytes, and packets with) Tj
+0 -14 Td
+(     payload \(`PSH,ACK`\) can be 54 or 60 bytes.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. What information does protocol field provide?) Tj
+0 -14 Td
+(   - It identifies the transport protocol carried by IP. Here `PROTOCOL_NO=6`) Tj
+0 -14 Td
+(     means TCP.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. What could happen if protocol field is modified?) Tj
+0 -14 Td
+(   - The receiver/network stack may pass the packet to the wrong protocol) Tj
+0 -14 Td
+(     handler, causing parsing failure or packet drop.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. What do protocol-specific fields reveal?) Tj
+0 -14 Td
+(   - TCP source/destination ports identify flow endpoints, and TCP flags reveal) Tj
+0 -14 Td
+(     connection phase \(SYN handshake, ACK confirmation, PSH data, FIN close\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(9. PROGRAM ENHANCEMENT) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Length 2461 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(Selected additional IP field: `IP_IDENTIFICATION`.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Purpose:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Used by IP for fragmentation and reassembly; fragments of the same original) Tj
+0 -14 Td
+(  datagram share the same identification value.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observed values from five packets:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Packet 1: `43682`) Tj
+0 -14 Td
+(* Packet 2: `0`) Tj
+0 -14 Td
+(* Packet 3: `43683`) Tj
+0 -14 Td
+(* Packet 4: `43684`) Tj
+0 -14 Td
+(* Packet 5: `24180`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observation:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* The value changes across packets \(not constant\), reflecting different packets) Tj
+0 -14 Td
+(  generated by the stack. One packet shows `0`, which is also valid for certain) Tj
+0 -14 Td
+(  local traffic behavior.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(10. REFLECTION ANSWERS \(<= 300 WORDS\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Raw sockets require root privileges because they allow direct access to packet) Tj
+0 -14 Td
+(headers and low-level traffic that can bypass normal transport-layer safety) Tj
+0 -14 Td
+(controls. This access can be abused for spoofing, scanning, or packet) Tj
+0 -14 Td
+(manipulation, so the OS restricts it.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Raw sockets differ from normal TCP/UDP sockets because applications receive and) Tj
+0 -14 Td
+(interpret headers directly. In TCP/UDP sockets, the kernel handles most) Tj
+0 -14 Td
+(protocol logic \(connection state, reliability, segmentation/reassembly,) Tj
+0 -14 Td
+(checksums\) and applications read only payload-oriented streams/datagrams.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(One advantage of raw sockets is full visibility/control of packet-level) Tj
+0 -14 Td
+(behavior, useful for protocol debugging and security tooling. One limitation is) Tj
+0 -14 Td
+(higher complexity and privilege requirements; implementation mistakes can easily) Tj
+0 -14 Td
+(cause incorrect parsing or unstable behavior.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(One cybersecurity application is intrusion detection or custom packet inspection) Tj
+0 -14 Td
+(where tools analyze live header/flag patterns \(for example, SYN flood patterns) Tj
+0 -14 Td
+(or anomalous protocol usage\).) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(11. CONCLUSION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The TCP raw socket implementation successfully captured and decoded 20 packets) Tj
+0 -14 Td
+(with required IP and TCP fields. Generated traffic was verified against) Tj
+ET
+endstream
+endobj
+12 0 obj
+<< /Length 169 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(Wireshark/dumpcap capture, and all selected comparison rows matched for source,) Tj
+0 -14 Td
+(destination, protocol, TTL, and packet size.) Tj
+ET
+endstream
+endobj
+13 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 14
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000139 00000 n 
+0000000266 00000 n 
+0000000393 00000 n 
+0000000521 00000 n 
+0000000649 00000 n 
+0000000777 00000 n 
+0000002717 00000 n 
+0000004475 00000 n 
+0000006893 00000 n 
+0000009407 00000 n 
+0000009628 00000 n 
+trailer
+<< /Size 14 /Root 1 0 R >>
+startxref
+9699
+%%EOF

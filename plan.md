@@ -2,8 +2,8 @@
 
 ## Plan Goal
 
-Complete Assignment 1 and Assignment 3 with the same quality standard already
-used for Assignment 2, and keep progress fully traceable in repository docs.
+Complete Assignments 1 through 4 with the same quality standard, and keep
+progress fully traceable in repository docs.
 
 ## Milestone Board
 
@@ -12,8 +12,9 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 | M1 - Assignment 1 foundation | Completed | `assignment1/` folder with code and README added |
 | M2 - Assignment 1 validation and evidence | Completed | WSL run, screenshots, `report.pdf`, and submission checker validation completed |
 | M3 - Assignment 3 foundation | Completed | `assignment3/` folder with `raw_capture.c` and README added |
-| M4 - Assignment 3 validation and evidence | In Progress | WSL automation script + traffic generator added; packet comparison/report pending |
-| M5 - Final consolidation | Pending | root docs finalized and submission-ready repo |
+| M4 - Assignment 3 validation and evidence | Completed | WSL run completed with `program_output.txt`, `capture.pcapng`, screenshots, and `report.pdf` |
+| M5 - Final consolidation (A1-A3) | Completed | root docs refreshed and evidence checkers passing |
+| M6 - Assignment 4 execution | In Progress | Mininet run, performance CSV, graphs, screenshots, and report generated; final reviewer pass pending |
 
 ## Work Breakdown
 
@@ -42,11 +43,18 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 - Save outputs/screenshots and protocol observations.
 - Update `README.md`, `prd.md`, and `plan.md`.
 
-### Milestone M5 - Final consolidation
+### Milestone M5 - Final consolidation (A1-A3)
 
 - Cross-check all assignment folders for completeness.
 - Ensure each folder has reproducible run instructions.
 - Finalize root documentation and progress table.
+
+### Milestone M6 - Assignment 4 execution
+
+- Read Assignment 4 statement and extract deliverables.
+- Implement threaded chat server and client workflow.
+- Run Mininet experiment and collect logs/capture evidence.
+- Generate performance CSV, graphs, and final report artifacts.
 
 ## Tracking Rules
 
@@ -74,3 +82,10 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 - 2026-07-25: Completed Assignment 1 WSL execution and generated updated logs/result table.
 - 2026-07-25: Added Assignment 1 `report.md` draft and `check_submission.py` validator.
 - 2026-07-25: Completed Assignment 1 screenshots and report PDF; submission check now passes.
+- 2026-07-25: Completed Assignment 3 run artifacts (`program_output.txt`, `capture.pcapng`, traffic output, and system details).
+- 2026-07-25: Completed Assignment 3 packet comparison, report (`report.md` + `report.pdf`), and screenshot evidence set.
+- 2026-07-25: Updated plan milestones to mark Assignment 3 complete and queued Assignment 4 kickoff.
+- 2026-07-25: Initialized `assignment4/` scaffold with threaded chat server/client and run guides.
+- 2026-07-25: Generated Assignment 4 baseline `performance_results.csv` and graph files in `assignment4/graphs/`.
+- 2026-07-25: Added WSL Mininet runner for Assignment 4 and generated `run_info.txt`, `system_details.txt`, and `capture.pcapng`.
+- 2026-07-25: Generated Assignment 4 required screenshot set and finalized `report.md` + `report.pdf`.

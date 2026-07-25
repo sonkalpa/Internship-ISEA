@@ -29,6 +29,12 @@ This command will generate:
 - `traffic_generation_output.txt`
 - `capture.pcapng` (if `tshark` is available)
 
+If `tshark` is not installed but `dumpcap` exists, capture with:
+
+```bash
+sudo dumpcap -i lo -a duration:20 -w capture.pcapng
+```
+
 ## Manual Method (step-by-step)
 
 ### 1) Compile
@@ -66,6 +72,12 @@ If you prefer terminal capture:
 
 ```bash
 sudo tshark -i any -f "tcp" -a duration:20 -w capture.pcapng
+```
+
+Fallback when `tshark` is unavailable:
+
+```bash
+sudo dumpcap -i lo -a duration:20 -w capture.pcapng
 ```
 
 ### 6) Fill comparison template

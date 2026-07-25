@@ -50,7 +50,8 @@ The goal of this repository is to maintain a clear and organized record of:
 |---|---|---|
 | Assignment 1 | Completed | CSV/logs/screenshots/report completed and validated |
 | Assignment 2 | Completed | Implementation, analysis, and docs available |
-| Assignment 3 | In Progress | WSL runner script and traffic generator added; evidence/report pending |
+| Assignment 3 | Completed | Raw socket output, capture, packet comparison, screenshots, and report completed |
+| Assignment 4 | In Progress | Mininet run completed with logs, CSV, graphs, packet-capture screenshots, and report |
 
 ## Working Style
 
