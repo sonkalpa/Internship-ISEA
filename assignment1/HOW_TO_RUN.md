@@ -130,6 +130,12 @@ Use `report_template.md` and create:
 `report.md` already contains a filled draft using current run outputs. You can
 reuse it directly while preparing the final PDF.
 
+You can regenerate PDF from the markdown draft using:
+
+```bash
+python3 generate_report_pdf.py
+```
+
 ## Submission readiness check
 
 Run:

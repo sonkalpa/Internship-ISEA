@@ -1,0 +1,15 @@
+[server] listening on 10.0.0.1:5000
+[server] src=10.0.0.2 seq=1 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=2 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=3 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=4 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=4 duplicate=True payload_len=17
+[server] src=10.0.0.2 seq=5 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=6 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=7 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=8 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=9 duplicate=False payload_len=17
+[server] src=10.0.0.2 seq=10 duplicate=False payload_len=18
+TOTAL_UNIQUE_MESSAGES_RECEIVED=10
+TOTAL_DUPLICATES_DETECTED=1
+STATUS=SUCCESS

@@ -28,12 +28,13 @@ assignment1/
   run_wsl_assignment1.sh
   run_wsl_assignment1.py
   check_submission.py
+  generate_report_pdf.py
   report_template.md
   report.md
+  report.pdf
   result_table.csv            (generated)
-  logs/                       (generated local run logs)
-  screenshots/                (add required PNGs)
-  report.pdf                  (to be added)
+  logs/                       (generated run logs)
+  screenshots/                (required PNGs)
 ```
 
 ## Packet Formats
@@ -134,7 +135,9 @@ It must have 3 data rows for loss `0`, `5`, `10`.
 - Code foundation: completed
 - WSL runner execution (loss 0/5/10 rows): completed
 - Updated logs are stored under `logs/`
-- Mininet packet-loss validation + screenshots/report: pending
+- Screenshots are collected in `screenshots/`
+- Report files (`report.md`, `report.pdf`) are completed
+- `check_submission.py` validation status: PASS
 
 ## Detailed Run Guide
 

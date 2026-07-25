@@ -10,7 +10,7 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 | Milestone | Status | Target Output |
 |---|---|---|
 | M1 - Assignment 1 foundation | Completed | `assignment1/` folder with code and README added |
-| M2 - Assignment 1 validation and evidence | In Progress | WSL run completed; report draft and submission checker added; screenshots/report.pdf pending |
+| M2 - Assignment 1 validation and evidence | Completed | WSL run, screenshots, `report.pdf`, and submission checker validation completed |
 | M3 - Assignment 3 foundation | Completed | `assignment3/` folder with `raw_capture.c` and README added |
 | M4 - Assignment 3 validation and evidence | In Progress | WSL automation script + traffic generator added; packet comparison/report pending |
 | M5 - Final consolidation | Pending | root docs finalized and submission-ready repo |
@@ -73,3 +73,4 @@ used for Assignment 2, and keep progress fully traceable in repository docs.
 - 2026-07-22: Defaulted WSL execution to loopback mode to prevent OVS startup hangs.
 - 2026-07-25: Completed Assignment 1 WSL execution and generated updated logs/result table.
 - 2026-07-25: Added Assignment 1 `report.md` draft and `check_submission.py` validator.
+- 2026-07-25: Completed Assignment 1 screenshots and report PDF; submission check now passes.

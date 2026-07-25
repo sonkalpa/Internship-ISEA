@@ -1,0 +1,298 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [3 0 R 4 0 R 5 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Length 1938 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(ASSIGNMENT 1 REPORT - RELIABLE UDP COMMUNICATION IN MININET) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. STUDENT DETAILS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Name: Sonkalpa Borah) Tj
+0 -14 Td
+(* Roll No: CS-BTC24-08) Tj
+0 -14 Td
+(* Timeout used \(roll last digit 8\): 1.5 seconds) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. OBJECTIVE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The objective of this assignment is to implement reliable message transfer over) Tj
+0 -14 Td
+(UDP using stop-and-wait logic. Reliability is added by attaching sequence) Tj
+0 -14 Td
+(numbers, waiting for ACK packets, applying timeout, and retransmitting packets) Tj
+0 -14 Td
+(when ACK is not received.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. TOPOLOGY AND SETUP) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Topology: `h1 -- s1 -- h2`) Tj
+0 -14 Td
+(* `h1` runs the UDP server and `h2` runs the UDP client.) Tj
+0 -14 Td
+(* Client message format: `SEQ|MESSAGE`) Tj
+0 -14 Td
+(* Server ACK format: `ACK|SEQ`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(In this run environment \(WSL\), packet-loss behavior was executed using the) Tj
+0 -14 Td
+(provided application-level fallback mode \(`--emulate-loss`\) because kernel) Tj
+0 -14 Td
+(`tc/netem` was unavailable.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. PROGRAM DESIGN) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(CLIENT) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Sends one message at a time.) Tj
+0 -14 Td
+(* Waits for matching ACK for current sequence number.) Tj
+0 -14 Td
+(* If timeout occurs or ACK is lost/invalid, retransmits the same sequence.) Tj
+0 -14 Td
+(* Tracks total sent packets, retransmissions, and total transfer time.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(SERVER) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Receives `SEQ|MESSAGE` packets.) Tj
+0 -14 Td
+(* Sends `ACK|SEQ` for every received packet.) Tj
+0 -14 Td
+(* Maintains set of seen sequence numbers.) Tj
+0 -14 Td
+(* Counts unique packets and duplicates.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 2221 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+() Tj
+0 -14 Td
+(5. RESULTS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(From `result_table.csv`:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(loss_percent | timeout | total_messages | total_packets_sent | total_retransmissions |) Tj
+0 -14 Td
+(transfer_time_seconds | status) Tj
+0 -14 Td
+(--- | ---: | ---: | ---: | ---: | ---: | ---) Tj
+0 -14 Td
+(0 | 1.5 | 10 | 10 | 0 | 0.304568 | SUCCESS) Tj
+0 -14 Td
+(5 | 1.5 | 10 | 10 | 0 | 0.305424 | SUCCESS) Tj
+0 -14 Td
+(10 | 1.5 | 10 | 11 | 1 | 0.335629 | SUCCESS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observation: as loss increases to 10%, one retransmission appears and transfer) Tj
+0 -14 Td
+(time increases.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. SERVER-SIDE DUPLICATE OBSERVATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(From `logs/server_loss10.out.txt`, the server detected one duplicate packet) Tj
+0 -14 Td
+(\(`seq=4`\) and still completed with:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `TOTAL_UNIQUE_MESSAGES_RECEIVED=10`) Tj
+0 -14 Td
+(* `TOTAL_DUPLICATES_DETECTED=1`) Tj
+0 -14 Td
+(* `STATUS=SUCCESS`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7. REQUIRED ANSWERS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Why is ACK needed?) Tj
+0 -14 Td
+(   - ACK confirms successful delivery of a specific sequence number, so the) Tj
+0 -14 Td
+(     sender knows when it can move to the next packet.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. Why is timeout needed?) Tj
+0 -14 Td
+(   - Timeout allows the sender to recover when data or ACK is lost by) Tj
+0 -14 Td
+(     triggering retransmission after waiting for a bounded period.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. Why can duplicate messages occur?) Tj
+0 -14 Td
+(   - If ACK is lost, the sender retransmits the same packet. The receiver may) Tj
+0 -14 Td
+(     already have processed it, so the same sequence number arrives again.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. What happens when packet loss increases?) Tj
+0 -14 Td
+(   - Retransmissions increase, transfer time increases, and protocol overhead) Tj
+0 -14 Td
+(     increases, reducing effective performance.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. How is this method similar to TCP?) Tj
+0 -14 Td
+(   - It uses reliability concepts similar to TCP: sequence tracking,) Tj
+0 -14 Td
+(     acknowledgment, timeout, and retransmission.) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 935 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+() Tj
+0 -14 Td
+(6. How is it different from TCP?) Tj
+0 -14 Td
+(   - This implementation is minimal stop-and-wait logic without TCP features) Tj
+0 -14 Td
+(     like sliding window, congestion control, flow control, and byte-stream) Tj
+0 -14 Td
+(     management.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8. SCREENSHOTS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Add these screenshots in `screenshots/` and include them in the final PDF:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `nodes.png`) Tj
+0 -14 Td
+(* `net.png`) Tj
+0 -14 Td
+(* `pingall.png`) Tj
+0 -14 Td
+(* `server_output.png`) Tj
+0 -14 Td
+(* `client_output.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(9. CONCLUSION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(The reliable UDP implementation correctly delivered all 10 messages across) Tj
+0 -14 Td
+(tested loss profiles, detected duplicates at higher loss, and showed expected) Tj
+0 -14 Td
+(increase in retransmission/time with loss.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000379 00000 n 
+0000000505 00000 n 
+0000002495 00000 n 
+0000004768 00000 n 
+0000005754 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5824
+%%EOF
