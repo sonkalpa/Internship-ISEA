@@ -1,0 +1,4 @@
+connected_users=0
+messages_processed=416
+broadcast_messages=321
+private_messages=79

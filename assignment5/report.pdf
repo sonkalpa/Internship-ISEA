@@ -1,0 +1,270 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 3 /Kids [3 0 R 4 0 R 5 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 6 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 7 0 R >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 9 0 R >> >> /Contents 8 0 R >>
+endobj
+6 0 obj
+<< /Length 2092 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(ASSIGNMENT 5 REPORT - ADVANCED MULTI-CLIENT CHAT SERVER USING TCP) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. OBJECTIVE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Enhance Assignment 4 chat server with advanced client management, private) Tj
+0 -14 Td
+(messaging, online-user listing, persistent chat history, and performance) Tj
+0 -14 Td
+(evaluation for 2, 3, and 4 clients.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. SYSTEM ARCHITECTURE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Server: `server.py` on `h1` \(port `5000`\)) Tj
+0 -14 Td
+(* Clients: `client.py` on `h2` to `h5`) Tj
+0 -14 Td
+(* Transport: TCP sockets) Tj
+0 -14 Td
+(* Shared artifacts: `chat_history.csv`, `performance_results.csv`, `graphs/`,) Tj
+0 -14 Td
+(  `screenshots/`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. DESIGN IMPROVEMENTS OVER ASSIGNMENT 4) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Added private messaging command: `/msg <username> <message>`) Tj
+0 -14 Td
+(* Added `/list` command for live online user list) Tj
+0 -14 Td
+(* Added persistent history in `chat_history.csv`) Tj
+0 -14 Td
+(* Added reconnect history playback \(last 5 sent messages\)) Tj
+0 -14 Td
+(* Added server-side client state tracking \(username/ip/port/login/status\)) Tj
+0 -14 Td
+(* Added server statistics tracking \(`server_stats.txt`\)) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. PROGRAM DESIGN) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `server.py` maintains active client state map and routes broadcast/private) Tj
+0 -14 Td
+(  traffic.) Tj
+0 -14 Td
+(* `client.py` supports interactive and auto traffic generation modes.) Tj
+0 -14 Td
+(* All message events are stored in `chat_history.csv`:) Tj
+0 -14 Td
+(  `timestamp,sender,receiver,message_type,message`.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. EXPERIMENTAL SETUP) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Mininet topology: `sudo mn --topo single,5`) Tj
+0 -14 Td
+(* Mapping: `h1` server, `h2..h5` clients) Tj
+0 -14 Td
+(* Experiments: 2, 3, and 4 clients; each sends 50 messages) Tj
+0 -14 Td
+(* Capture filter: `tcp.port == 5000`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. RESULTS) Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 2096 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+() Tj
+0 -14 Td
+(From `performance_results.csv`:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(clients | broadcast_messages | private_messages | avg_delay_ms | throughput_msgs_per_sec) Tj
+0 -14 Td
+(---: | ---: | ---: | ---: | ---:) Tj
+0 -14 Td
+(2 | 80 | 20 | 322.531 | 37.945) Tj
+0 -14 Td
+(3 | 120 | 30 | 294.053 | 57.518) Tj
+0 -14 Td
+(4 | 160 | 40 | 480.737 | 75.673) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7. GRAPH ANALYSIS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Generated graph files:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `graphs/clients_vs_delay.png`) Tj
+0 -14 Td
+(* `graphs/clients_vs_throughput.png`) Tj
+0 -14 Td
+(* `graphs/message_type_distribution.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Observations:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Throughput increases with more active clients due higher aggregate message) Tj
+0 -14 Td
+(  rate.) Tj
+0 -14 Td
+(* Average delay increases under higher concurrency.) Tj
+0 -14 Td
+(* Private message counts rise according to configured `/msg` frequency.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8. WIRESHARK VERIFICATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Filter used: `tcp.port == 5000`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Screenshots included:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `screenshots/client_connection.png`) Tj
+0 -14 Td
+(* `screenshots/broadcast_message.png`) Tj
+0 -14 Td
+(* `screenshots/private_message.png`) Tj
+0 -14 Td
+(* `screenshots/client_disconnect.png`) Tj
+0 -14 Td
+(* `screenshots/tcp_connection_termination.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(9. REFLECTION ANSWERS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Server-side routing is required for private messaging so only the intended) Tj
+0 -14 Td
+(   recipient receives the message while other clients are excluded.) Tj
+0 -14 Td
+(2. Maintaining user state allows correct online list updates, reconnect) Tj
+0 -14 Td
+(   behavior, and reliable routing decisions.) Tj
+0 -14 Td
+(3. For 100 users, scale using async I/O or worker pools, optimize shared-state) Tj
+0 -14 Td
+(   locking, and consider horizontal partitioning.) Tj
+0 -14 Td
+(4. Wireshark packets validating private messaging are client->server payloads) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 495 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(   followed by server->single-client payloads instead of broadcast fanout.) Tj
+0 -14 Td
+(5. Next improvement: authentication, encrypted transport, and durable storage.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(10. CONCLUSION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Assignment 5 objectives are implemented by extending Assignment 4 with advanced) Tj
+0 -14 Td
+(messaging features, persistent history, performance metrics, and packet-level) Tj
+0 -14 Td
+(verification evidence.) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000127 00000 n 
+0000000253 00000 n 
+0000000379 00000 n 
+0000000505 00000 n 
+0000002649 00000 n 
+0000004797 00000 n 
+0000005343 00000 n 
+trailer
+<< /Size 10 /Root 1 0 R >>
+startxref
+5413
+%%EOF

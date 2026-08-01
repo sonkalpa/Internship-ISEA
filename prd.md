@@ -11,6 +11,8 @@ Assignments in scope:
 2. Assignment 2 - TCP Wireshark Performance Analysis in Mininet
 3. Assignment 3 - Raw Socket Packet Analysis
 4. Assignment 4 - Multi-Client Chat Server over TCP
+5. Assignment 5 - Advanced Multi-Client Chat Server over TCP
+6. Assignment 6 - GUI-Based Multi-Client Chat Application over TCP
 
 ## 2) Objectives
 
@@ -68,6 +70,18 @@ Assignments in scope:
 - Multi-client messaging validation evidence.
 - Assignment-specific README in `assignment4/`.
 
+### Assignment 5 - Advanced Chat Server
+
+- Enhanced client state management and routing features.
+- Private messaging, online user list, and persistent history evidence.
+- Performance CSV, graphs, Wireshark verification screenshots, and report.
+
+### Assignment 6 - GUI-Based Chat Application
+
+- GUI client implementation over reused server/networking logic.
+- GUI behavior evidence and wireshark verification screenshots.
+- Assignment-specific documentation and final report.
+
 ## 6) Functional Requirements
 
 - Each assignment folder must include runnable scripts and clear run steps.
@@ -86,6 +100,7 @@ Assignments in scope:
 
 - A1, A2, A3 each contain code + evidence + assignment README.
 - A4 contains code + evidence + assignment README when that milestone is done.
+- A5 and A6 each contain code + evidence + assignment README when done.
 - Root `README.md` reflects latest overall progress.
 - `plan.md` milestone table is current.
 - `prd.md` is updated whenever scope or requirements materially change.
@@ -107,6 +122,9 @@ Assignments in scope:
 | M5 - Final packaging for A1-A3 | Completed | root docs and milestone trackers refreshed |
 | M6 - Assignment 4 execution | Completed | Mininet run completed with logs, capture evidence, screenshots, graphs, and report artifacts |
 | M7 - Final packaging for A1-A4 | Completed | assignment-wise audit finished and zip-ready deliverables generated |
+| M8 - Assignment 5 execution | Completed | advanced chat feature set, performance evidence, screenshots, and report artifacts generated |
+| M9 - Assignment 6 execution | Completed | GUI client, verification evidence, screenshots, and report artifacts generated |
+| M10 - Final packaging for A1-A6 | Completed | zip-ready deliverables generated in assignment folders and `submissions/` |
 
 ## 11) Change Log
 
@@ -134,3 +152,6 @@ Assignments in scope:
 - 2026-07-25: Completed Assignment 2 requirement gaps and finalized `report.pdf`.
 - 2026-07-25: Performed full A1-A4 requirement audit against assignment PDFs.
 - 2026-07-25: Generated final zip submission packages for Assignments 1-4 under `submissions/`.
+- 2026-08-01: Added Assignment 5 implementation, automation workflow, required evidence artifacts, checker, and report pipeline.
+- 2026-08-01: Added Assignment 6 GUI client implementation, verification workflow, required screenshot set, checker, and report pipeline.
+- 2026-08-01: Updated repository packaging to include A5 and A6 submission zip files.

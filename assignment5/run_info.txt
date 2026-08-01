@@ -1,0 +1,3 @@
+SWITCH_BACKEND=LinuxBridge (WSL default)
+TOPOLOGY=h1--s1--{h2,h3,h4,h5}
+PINGALL_LOSS_PERCENT=0.0

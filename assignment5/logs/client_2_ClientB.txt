@@ -1,0 +1,114 @@
+[ClientA] bc-002
+SYSTEM:WELCOME:ClientB
+[ClientA] bc-003
+ONLINE_USERS:ClientA,ClientB
+[ClientB] bc-001
+[ClientA] bc-004
+[PM][ClientA] pm-005
+[ClientA] bc-006
+[ClientB] bc-002
+[ClientB] bc-003
+[ClientB] bc-004
+[ClientA] bc-007
+[PM to ClientA] pm-005
+[ClientB] bc-006
+[ClientB] bc-007
+[ClientB] bc-008
+[ClientB] bc-009
+[ClientA] bc-008
+[PM to ClientA] pm-010
+[ClientB] bc-011
+[ClientB] bc-012
+[ClientB] bc-013
+[ClientB] bc-014
+[ClientA] bc-009
+[PM][ClientA] pm-010
+[PM to ClientA] pm-015
+[ClientB] bc-016
+[ClientB] bc-017
+[ClientB] bc-018
+[ClientB] bc-019
+[ClientA] bc-011
+[ClientA] bc-012
+[ClientA] bc-013
+[ClientA] bc-014
+[PM][ClientA] pm-015
+[ClientA] bc-016
+[ClientA] bc-017
+[ClientA] bc-018
+[ClientA] bc-019
+[PM][ClientA] pm-020
+[ClientA] bc-021
+[PM to ClientA] pm-020
+ONLINE_USERS:ClientA,ClientB
+[ClientB] bc-021
+[ClientB] bc-022
+[ClientB] bc-023
+[ClientB] bc-024
+[PM to ClientA] pm-025
+[ClientA] bc-022
+[ClientA] bc-023
+[ClientB] bc-026
+[ClientB] bc-027
+[ClientB] bc-028
+[ClientA] bc-024
+[PM][ClientA] pm-025
+[ClientA] bc-026
+[ClientB] bc-029
+[PM to ClientA] pm-030
+[ClientA] bc-027
+[ClientA] bc-028
+[ClientA] bc-029
+[PM][ClientA] pm-030
+[ClientA] bc-031
+[ClientA] bc-032
+[ClientA] bc-033
+[ClientA] bc-034
+[PM][ClientA] pm-035
+[ClientB] bc-031
+[ClientB] bc-032
+[ClientB] bc-033
+[ClientB] bc-034
+[PM to ClientA] pm-035
+[ClientB] bc-036
+[ClientB] bc-037
+[ClientB] bc-038
+[ClientB] bc-039
+[PM to ClientA] pm-040
+ONLINE_USERS:ClientA,ClientB
+[ClientA] bc-036
+[ClientA] bc-037
+[ClientA] bc-038
+[ClientA] bc-039
+[PM][ClientA] pm-040
+[ClientA] bc-041
+[ClientA] bc-042
+[ClientA] bc-043
+[ClientB] bc-041
+[ClientB] bc-042
+[ClientB] bc-043
+[ClientB] bc-044
+[PM to ClientA] pm-045
+[ClientB] bc-046
+[ClientB] bc-047
+[ClientB] bc-048
+[ClientB] bc-049
+[PM to ClientA] pm-050
+[ClientA] bc-044
+[PM][ClientA] pm-045
+[ClientA] bc-046
+[ClientA] bc-047
+[ClientA] bc-048
+[ClientA] bc-049
+[PM][ClientA] pm-050
+SYSTEM:LEAVE:ClientA
+ONLINE_USERS:ClientB
+{
+  "username": "ClientB",
+  "sent_messages": 50,
+  "broadcast_sent": 40,
+  "private_sent": 10,
+  "received_matches": 50,
+  "avg_delay_ms": 318.148,
+  "duration_sec": 2.513
+}

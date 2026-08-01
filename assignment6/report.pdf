@@ -1,0 +1,221 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Count 2 /Kids [3 0 R 4 0 R] >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 7 0 R >> >> /Contents 5 0 R >>
+endobj
+4 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 7 0 R >> >> /Contents 6 0 R >>
+endobj
+5 0 obj
+<< /Length 1885 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+(ASSIGNMENT 6 REPORT - GUI-BASED MULTI-CLIENT CHAT APPLICATION USING TCP) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. OBJECTIVE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Convert the terminal-based chat client into a GUI application while reusing the) Tj
+0 -14 Td
+(Assignment 5 server and core socket communication logic.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(2. GUI DESIGN) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Implemented with tkinter and includes:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Login window \(username/password/connect\)) Tj
+0 -14 Td
+(* Main chat window with scrollable message area) Tj
+0 -14 Td
+(* Message input + Send button) Tj
+0 -14 Td
+(* Disconnect button) Tj
+0 -14 Td
+(* Online users list panel) Tj
+0 -14 Td
+(* Connection status label) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(3. SYSTEM ARCHITECTURE) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Server: `server.py` \(reused Assignment 5 behavior\)) Tj
+0 -14 Td
+(* GUI Client: `client_gui.py`) Tj
+0 -14 Td
+(* Message receive path runs in background thread to keep UI responsive) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(4. COMPONENTS REUSED FROM ASSIGNMENT 5) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* TCP socket protocol) Tj
+0 -14 Td
+(* Broadcast messaging) Tj
+0 -14 Td
+(* Private messaging \(`/msg <username> <message>`\)) Tj
+0 -14 Td
+(* Online user list update \(`ONLINE_USERS:`\)) Tj
+0 -14 Td
+(* Join/leave system notifications) Tj
+0 -14 Td
+(* Persistent chat history format) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(5. GUI DESIGN DECISIONS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* Separated network receive loop from tkinter main loop using a background) Tj
+0 -14 Td
+(  thread.) Tj
+0 -14 Td
+(* UI updates are marshaled to the GUI thread using `root.after\(...\)`.) Tj
+0 -14 Td
+(* Private messaging uses a target username entry and user-list selection helper.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(6. TESTING RESULTS) Tj
+0 -14 Td
+() Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 1877 >>
+stream
+BT
+/F1 11 Tf
+50 760 Td
+() Tj
+0 -14 Td
+(Multi-client tests were executed in Mininet \(`single,5`\) with one server and) Tj
+0 -14 Td
+(four clients. Backend communication remained stable while message handling ran) Tj
+0 -14 Td
+(concurrently.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(7. WIRESHARK VERIFICATION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Capture filter: `tcp.port == 5000`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Included screenshots:) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(* `screenshots/wireshark_client_connection.png`) Tj
+0 -14 Td
+(* `screenshots/wireshark_broadcast_message.png`) Tj
+0 -14 Td
+(* `screenshots/wireshark_private_message.png`) Tj
+0 -14 Td
+(* `screenshots/wireshark_client_disconnection.png`) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(These validate connection setup, payload transfer for broadcast/private flows,) Tj
+0 -14 Td
+(and disconnection behavior.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(8. REFLECTION ANSWERS) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(1. Networking logic and GUI code should be separated to simplify maintenance,) Tj
+0 -14 Td
+(   testing, and future upgrades.) Tj
+0 -14 Td
+(2. A background thread is required because blocking socket receives would freeze) Tj
+0 -14 Td
+(   the GUI event loop.) Tj
+0 -14 Td
+(3. Assignment 5 server routing, command protocol, and online-user/state updates) Tj
+0 -14 Td
+(   were reused.) Tj
+0 -14 Td
+(4. The GUI improves usability by providing visual message history, online user) Tj
+0 -14 Td
+(   context, and easier private message targeting.) Tj
+0 -14 Td
+(5. Future enhancement: add authentication and TLS encryption.) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(9. CONCLUSION) Tj
+0 -14 Td
+() Tj
+0 -14 Td
+() Tj
+0 -14 Td
+(Assignment 6 successfully wraps the prior chat networking stack in a responsive) Tj
+0 -14 Td
+(GUI client while preserving multi-client functionality, private messaging,) Tj
+0 -14 Td
+(online user awareness, and packet-level verification.) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000247 00000 n 
+0000000373 00000 n 
+0000002310 00000 n 
+0000004239 00000 n 
+trailer
+<< /Size 8 /Root 1 0 R >>
+startxref
+4309
+%%EOF

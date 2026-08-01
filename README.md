@@ -42,6 +42,8 @@ The goal of this repository is to maintain a clear and organized record of:
 - `assignment2/` - completed TCP performance deliverables
 - `assignment3/` - raw socket packet analysis implementation and docs
 - `assignment4/` - multi-client TCP chat server implementation and docs
+- `assignment5/` - advanced multi-client TCP chat server implementation and docs
+- `assignment6/` - GUI-based multi-client TCP chat application and docs
 - `submissions/` - zip-ready deliverables per assignment
 - `requirements_audit.md` - PDF requirement-to-artifact completion audit
 - `prd.md` - assignment requirements and acceptance criteria
@@ -55,6 +57,8 @@ The goal of this repository is to maintain a clear and organized record of:
 | Assignment 2 | Completed | Mininet run artifacts, CSVs, graphs, screenshots, and report finalized |
 | Assignment 3 | Completed | Raw socket output, capture, packet comparison, screenshots, and report completed |
 | Assignment 4 | Completed | Chat server run, logs, performance CSV, graphs, Wireshark screenshots, and report completed |
+| Assignment 5 | Completed | Advanced chat features, history, performance CSV, graphs, screenshots, and report completed |
+| Assignment 6 | Completed | GUI client, multi-client verification screenshots, and report completed |
 
 ## Submission Packages
 
@@ -64,6 +68,8 @@ Prepared zip files in `submissions/`:
 - `submissions/CS-BTC24-08_SONKALPA_BORAH_TCP_ASSIGNMENT.zip`
 - `submissions/CS-BTC24-08_SONKALPA_BORAH_RAWSOCKET.zip`
 - `submissions/CS-BTC24-08_SONKALPA_BORAH_CHATSERVER.zip`
+- `submissions/CS-BTC24-08_SONKALPA_BORAH_ASSIGNMENT5.zip`
+- `submissions/CS-BTC24-08_SONKALPA_BORAH_ASSIGNMENT6.zip`
 
 ## Working Style
 

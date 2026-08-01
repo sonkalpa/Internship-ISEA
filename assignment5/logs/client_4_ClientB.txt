@@ -1,0 +1,159 @@
+SYSTEM:WELCOME:ClientB
+HISTORY|2026-08-01 08:35:31|ClientB|ALL|broadcast|bc-046
+HISTORY|2026-08-01 08:35:31|ClientB|ALL|broadcast|bc-047
+HISTORY|2026-08-01 08:35:31|ClientB|ALL|broadcast|bc-048
+HISTORY|2026-08-01 08:35:31|ClientB|ALL|broadcast|bc-049
+HISTORY|2026-08-01 08:35:31|ClientB|ClientC|private|pm-050
+ONLINE_USERS:ClientA,ClientB,ClientC,ClientD
+SYSTEM:JOIN:ClientC
+ONLINE_USERS:ClientA,ClientB,ClientC,ClientD
+[ClientB] bc-001
+[ClientB] bc-002
+[ClientC] bc-001
+[ClientC] bc-002
+SYSTEM:JOIN:ClientD
+ONLINE_USERS:ClientA,ClientB,ClientC,ClientD
+[ClientD] bc-001
+SYSTEM:JOIN:ClientA
+ONLINE_USERS:ClientA,ClientB,ClientC,ClientD
+[ClientA] bc-001
+[ClientB] bc-003
+[ClientB] bc-004
+[PM to ClientA] pm-005
+[ClientB] bc-006
+[ClientD] bc-002
+[ClientD] bc-003
+[ClientD] bc-004
+[ClientC] bc-003
+[ClientC] bc-004
+[ClientC] bc-006
+[ClientC] bc-007
+[ClientC] bc-008
+[ClientC] bc-009
+[PM][ClientC] pm-010
+[ClientC] bc-011
+[ClientC] bc-012
+[ClientC] bc-013
+[ClientC] bc-014
+[ClientC] bc-016
+[ClientB] bc-007
+[ClientB] bc-008
+[ClientB] bc-009
+[ClientC] bc-017
+[ClientC] bc-018
+[ClientC] bc-019
+[ClientC] bc-021
+[PM to ClientC] pm-010
+[ClientB] bc-011
+[ClientB] bc-012
+[ClientB] bc-013
+[ClientB] bc-014
+[PM to ClientD] pm-015
+[ClientB] bc-016
+[ClientB] bc-017
+[ClientB] bc-018
+[ClientB] bc-019
+[PM to ClientA] pm-020
+ONLINE_USERS:ClientA,ClientB,ClientC,ClientD
+[ClientB] bc-021
+[ClientB] bc-022
+[ClientB] bc-023
+[ClientB] bc-024
+[PM to ClientC] pm-025
+[ClientB] bc-026
+[ClientB] bc-027
+[ClientD] bc-006
+[ClientD] bc-007
+[ClientD] bc-008
+[ClientD] bc-009
+[PM][ClientD] pm-010
+[ClientD] bc-011
+[ClientD] bc-012
+[ClientD] bc-013
+[ClientD] bc-014
+[ClientD] bc-016
+[ClientD] bc-017
+[ClientD] bc-018
+[ClientD] bc-019
+[ClientD] bc-021
+[ClientD] bc-022
+[ClientD] bc-023
+[ClientD] bc-024
+[PM][ClientD] pm-025
+[ClientD] bc-026
+[ClientD] bc-027
+[ClientD] bc-028
+[ClientD] bc-029
+[ClientD] bc-031
+[ClientD] bc-032
+[ClientD] bc-033
+[ClientD] bc-034
+[ClientD] bc-036
+[ClientD] bc-037
+[ClientD] bc-038
+[ClientD] bc-039
+[PM][ClientD] pm-040
+[ClientD] bc-041
+[ClientD] bc-042
+[ClientD] bc-043
+[ClientD] bc-044
+[ClientD] bc-046
+[ClientD] bc-047
+[ClientD] bc-048
+[ClientD] bc-049
+[ClientC] bc-022
+[ClientC] bc-023
+[ClientC] bc-024
+[PM][ClientC] pm-025
+[ClientC] bc-026
+[ClientC] bc-027
+[ClientC] bc-028
+[ClientC] bc-029
+[ClientC] bc-031
+[ClientC] bc-032
+[ClientC] bc-033
+[ClientC] bc-034
+[ClientC] bc-036
+[ClientC] bc-037
+[ClientC] bc-038
+[ClientC] bc-039
+[PM][ClientC] pm-040
+[ClientC] bc-041
+[ClientC] bc-042
+[ClientC] bc-043
+[ClientC] bc-044
+[ClientC] bc-046
+[ClientC] bc-047
+[ClientC] bc-048
+[ClientC] bc-049
+[ClientA] bc-002
+[ClientA] bc-003
+[ClientA] bc-004
+[PM][ClientA] pm-005
+[ClientA] bc-006
+[ClientA] bc-007
+[ClientA] bc-008
+[ClientA] bc-009
+[ClientA] bc-011
+[ClientA] bc-012
+[ClientA] bc-013
+[ClientA] bc-014
+[ClientA] bc-016
+[ClientA] bc-017
+[ClientA] bc-018
+[ClientA] bc-019
+[PM][ClientA] pm-020
+[ClientA] bc-021
+[ClientA] bc-022
+[ClientA] bc-023
+[ClientA] bc-024
+[ClientA] bc-026
+{
+  "username": "ClientB",
+  "sent_messages": 50,
+  "broadcast_sent": 40,
+  "private_sent": 10,
+  "received_matches": 46,
+  "avg_delay_ms": 434.256,
+  "duration_sec": 2.515
+}

@@ -7,6 +7,8 @@ repository state.
 - `CS-BTC24-08_SONKALPA_BORAH_TCP_ASSIGNMENT.zip`
 - `CS-BTC24-08_SONKALPA_BORAH_RAWSOCKET.zip`
 - `CS-BTC24-08_SONKALPA_BORAH_CHATSERVER.zip`
+- `CS-BTC24-08_SONKALPA_BORAH_ASSIGNMENT5.zip`
+- `CS-BTC24-08_SONKALPA_BORAH_ASSIGNMENT6.zip`
 
 Each zip file has a single top-level folder and includes the required files
 for the corresponding assignment as specified in the assignment PDF.

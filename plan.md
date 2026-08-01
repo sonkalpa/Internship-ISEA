@@ -2,7 +2,7 @@
 
 ## Plan Goal
 
-Complete Assignments 1 through 4 with the same quality standard, and keep
+Complete Assignments 1 through 6 with the same quality standard, and keep
 progress fully traceable in repository docs.
 
 ## Milestone Board
@@ -16,6 +16,9 @@ progress fully traceable in repository docs.
 | M5 - Final consolidation (A1-A3) | Completed | root docs refreshed and evidence checkers passing |
 | M6 - Assignment 4 execution | Completed | Mininet run, logs, CSV, graphs, Wireshark screenshots, and `report.pdf` finalized |
 | M7 - Final packaging (A1-A4) | Completed | requirement audit done and zip submission packages generated |
+| M8 - Assignment 5 implementation and evidence | Completed | advanced server features, history CSV, performance CSV, graphs, screenshots, and report generated |
+| M9 - Assignment 6 GUI implementation and evidence | Completed | GUI client, backend validation run, required screenshots, and report generated |
+| M10 - Final packaging (A1-A6) | Completed | zip packages generated per assignment and in `submissions/` |
 
 ## Work Breakdown
 
@@ -63,6 +66,24 @@ progress fully traceable in repository docs.
 - Fill any missing artifacts (screenshots/report/validators).
 - Generate final zip packages for each assignment under `submissions/`.
 
+### Milestone M8 - Assignment 5 implementation and evidence
+
+- Read Assignment 5 PDF and map all required deliverables.
+- Implement enhanced client management, private messaging, `/list`, and persistent history.
+- Run 2/3/4-client performance experiments and generate required graphs/screenshots/report.
+
+### Milestone M9 - Assignment 6 GUI implementation and evidence
+
+- Read Assignment 6 PDF and design GUI client over reused Assignment 5 networking logic.
+- Implement login window, chat interface, online users panel, private messaging, and background receive thread.
+- Generate required GUI + wireshark screenshots and final report.
+
+### Milestone M10 - Final packaging (A1-A6)
+
+- Re-audit assignments against PDFs.
+- Generate/update zip package in each assignment folder.
+- Generate/update zip package copies under `submissions/`.
+
 ## Tracking Rules
 
 - After every milestone update, refresh all three files:
@@ -100,3 +121,6 @@ progress fully traceable in repository docs.
 - 2026-07-25: Completed Assignment 2 missing artifacts (`nodes/net/pingall/server/client` screenshots and `report.pdf`).
 - 2026-07-25: Regenerated Assignment 3 and 4 screenshot evidence with updated captures.
 - 2026-07-25: Created all assignment submission zip files under `submissions/`.
+- 2026-08-01: Added `assignment5/` with advanced client management, private messaging, history, performance runner, graphs, screenshots, checker, and report workflow.
+- 2026-08-01: Added `assignment6/` with GUI client (`client_gui.py`), reused server logic, backend validation runner, screenshot generator, checker, and report workflow.
+- 2026-08-01: Generated Assignment 5 and 6 submission zip files and copied zip package into each assignment folder.

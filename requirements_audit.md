@@ -1,4 +1,4 @@
-# Requirements Audit - Assignments 1 to 4
+# Requirements Audit - Assignments 1 to 6
 
 Date: 2026-07-25
 
@@ -41,6 +41,23 @@ assignment PDFs and the current repository state.
 - Required report (`report.pdf`): Done
 - Submission checker (`assignment4/check_submission.py`): PASS
 
+## Assignment 5 - Advanced Multi-Client Chat Server
+
+- Required code files (`server.py`, `client.py`): Done
+- Required data files (`chat_history.csv`, `performance_results.csv`): Done
+- Required graph set (`clients_vs_delay`, `clients_vs_throughput`, `message_type_distribution`): Done
+- Required screenshot set (client connection, broadcast, private, disconnect, TCP termination): Done
+- Required report (`report.pdf`): Done
+- Submission checker (`assignment5/check_submission.py`): PASS
+
+## Assignment 6 - GUI-Based Multi-Client Chat Application
+
+- Required code files (`server.py`, `client_gui.py`): Done
+- Required GUI screenshot set (login, connection, main window, broadcast/private, join/leave): Done
+- Required Wireshark screenshot set (connection, broadcast, private, disconnection): Done
+- Required report (`report.pdf`): Done
+- Submission checker (`assignment6/check_submission.py`): PASS
+
 ## Submission Packages
 
 Generated zip files under `submissions/`:
@@ -49,6 +66,8 @@ Generated zip files under `submissions/`:
 - `CS-BTC24-08_SONKALPA_BORAH_TCP_ASSIGNMENT.zip`
 - `CS-BTC24-08_SONKALPA_BORAH_RAWSOCKET.zip`
 - `CS-BTC24-08_SONKALPA_BORAH_CHATSERVER.zip`
+- `CS-BTC24-08_SONKALPA_BORAH_ASSIGNMENT5.zip`
+- `CS-BTC24-08_SONKALPA_BORAH_ASSIGNMENT6.zip`
 
-All four packages contain the required core files and required screenshot/report
+All packages contain the required core files and required screenshot/report
 artifacts for their respective assignments.

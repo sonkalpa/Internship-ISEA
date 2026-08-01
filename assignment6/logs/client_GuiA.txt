@@ -1,0 +1,128 @@
+SYSTEM:WELCOME:GuiA
+SYSTEM:JOIN:GuiB
+ONLINE_USERS:GuiA,GuiB
+[GuiB] bc-001
+ONLINE_USERS:GuiA,GuiB
+[GuiA] bc-001
+[GuiA] bc-002
+[GuiB] bc-002
+[GuiA] bc-003
+[GuiB] bc-003
+[PM to GuiB] pm-004
+[PM][GuiB] pm-004
+SYSTEM:JOIN:GuiD
+ONLINE_USERS:GuiA,GuiB,GuiC,GuiD
+[GuiD] bc-001
+SYSTEM:JOIN:GuiC
+ONLINE_USERS:GuiA,GuiB,GuiC,GuiD
+[GuiC] bc-001
+[GuiC] bc-002
+[GuiC] bc-003
+[GuiD] bc-002
+[GuiD] bc-003
+[PM][GuiC] pm-004
+[PM][GuiD] pm-004
+[GuiA] bc-005
+[GuiB] bc-005
+[GuiD] bc-005
+[GuiC] bc-005
+[GuiA] bc-006
+[GuiB] bc-006
+[GuiD] bc-006
+[GuiC] bc-006
+[GuiA] bc-007
+[GuiB] bc-007
+[GuiD] bc-007
+[GuiC] bc-007
+[PM to GuiC] pm-008
+[GuiA] bc-009
+[GuiB] bc-009
+[GuiD] bc-009
+[GuiC] bc-009
+[GuiA] bc-010
+[GuiB] bc-010
+[GuiD] bc-010
+[GuiC] bc-010
+[GuiA] bc-011
+[GuiB] bc-011
+[GuiC] bc-011
+[GuiD] bc-011
+[PM to GuiD] pm-012
+[GuiA] bc-013
+[GuiB] bc-013
+[GuiC] bc-013
+[GuiD] bc-013
+[GuiA] bc-014
+[GuiB] bc-014
+[GuiC] bc-014
+[GuiD] bc-014
+[GuiA] bc-015
+[GuiB] bc-015
+[GuiD] bc-015
+[GuiC] bc-015
+[PM to GuiB] pm-016
+[PM][GuiB] pm-016
+[PM][GuiD] pm-016
+[PM][GuiC] pm-016
+[GuiA] bc-017
+[GuiB] bc-017
+[GuiD] bc-017
+[GuiC] bc-017
+[GuiA] bc-018
+[GuiB] bc-018
+[GuiD] bc-018
+[GuiC] bc-018
+[GuiA] bc-019
+[GuiB] bc-019
+[GuiC] bc-019
+[GuiD] bc-019
+[PM to GuiC] pm-020
+ONLINE_USERS:GuiA,GuiB,GuiC,GuiD
+[GuiB] bc-021
+[GuiA] bc-021
+[GuiC] bc-021
+[GuiD] bc-021
+[GuiA] bc-022
+[GuiB] bc-022
+[GuiC] bc-022
+[GuiD] bc-022
+[GuiA] bc-023
+[GuiB] bc-023
+[GuiC] bc-023
+[GuiD] bc-023
+[PM to GuiD] pm-024
+[GuiA] bc-025
+[GuiB] bc-025
+[GuiC] bc-025
+[GuiD] bc-025
+[GuiA] bc-026
+[GuiB] bc-026
+[GuiC] bc-026
+[GuiD] bc-026
+[GuiA] bc-027
+[GuiB] bc-027
+[GuiC] bc-027
+[GuiD] bc-027
+[PM][GuiB] pm-028
+[PM to GuiB] pm-028
+[PM][GuiC] pm-028
+[PM][GuiD] pm-028
+[GuiB] bc-029
+[GuiA] bc-029
+[GuiC] bc-029
+[GuiD] bc-029
+[GuiB] bc-030
+[GuiA] bc-030
+[GuiD] bc-030
+[GuiC] bc-030
+SYSTEM:LEAVE:GuiB
+ONLINE_USERS:GuiA,GuiC,GuiD
+{
+  "username": "GuiA",
+  "sent_messages": 30,
+  "broadcast_sent": 23,
+  "private_sent": 7,
+  "received_matches": 30,
+  "avg_delay_ms": 17.433,
+  "duration_sec": 2.113
+}
