@@ -42,11 +42,18 @@ def read_lines(path: Path) -> list[str]:
 def packet_pairs() -> list[tuple[str, str]]:
     if not CAPTURE.exists() or CAPTURE.stat().st_size == 0:
         return []
-    out = subprocess.check_output(
-        ["tcpdump", "-nn", "-tttt", "-vv", "-r", str(CAPTURE)],
-        text=True,
-        stderr=subprocess.STDOUT,
-    )
+    try:
+        out = subprocess.check_output(
+            ["tcpdump", "-nn", "-tttt", "-vv", "-r", str(CAPTURE)],
+            text=True,
+            stderr=subprocess.STDOUT,
+        )
+    except FileNotFoundError:
+        return []
+    except subprocess.CalledProcessError as exc:
+        out = exc.output or ""
+        if not out:
+            return []
     lines = out.splitlines()
     pairs: list[tuple[str, str]] = []
     i = 0
